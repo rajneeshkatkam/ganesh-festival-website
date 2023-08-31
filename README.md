@@ -1,3 +1,6 @@
+# ganesh-festival-website
+Adarsh Nagar Ganapati Website
+
 HTML tags/elements references: https://developer.mozilla.org/en-US/docs/Web/HTML , https://www.w3schools.com/html/
 
 CSS References :  https://developer.mozilla.org/en-US/docs/Web/CSS/Reference , https://www.w3schools.com/css/default.asp
