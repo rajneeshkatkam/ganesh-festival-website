@@ -1,0 +1,326 @@
+body{
+    text-align:center;
+    font-family: 'Merriweather', serif;
+    margin: 0;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+
+.hr-class-gray {
+    border: none;
+    border-top: dotted 12px gray;
+    width: 7%;
+    margin-bottom: 0;
+    padding: 15px 0;
+}
+
+.hr-class-white {
+    border: none;
+    border-top: dotted 12px white;
+    width: 7%;
+    margin-bottom: 0;
+    padding: 15px 0;
+}
+
+
+/* Home Section */
+
+.navbar-custom{
+    background-color: #c3ce32;
+}
+
+.navbar-light{
+    font-weight: bold;
+    color: #006a71;
+}
+
+#home{
+    background-color: #ffffdd;
+}
+
+.home-container-custom{
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.home-heading-custom{
+    margin:80px auto 0px auto ;
+    font-family: 'Sacramento', cursive;
+    font-size: 6.625rem;
+    color: #006a71;
+    font-weight: bold;
+}
+
+.home-subtitle{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.0rem;
+    color: #006a71;
+    font-weight: bold;
+    padding:25px 0 0
+}
+
+.top-cloud {
+    position: absolute;
+    right: 4rem;
+    width: 20%;
+}
+
+.bottom-cloud {
+    position: absolute;
+    left: 4rem;
+    width: 20%;
+}
+
+.profile-img {
+    border-radius: 100%;
+    border: solid 2px #006a71;
+    margin-top: 50px;
+}
+
+.home-description{
+    font-family: 'Montserrat', sans-serif;
+    color: #006a71;
+    padding: 10px 0 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 45%;
+    margin: 0 auto;
+}
+
+@media(max-width:550px){
+    .home-description{
+        font-family: 'Montserrat', sans-serif;
+        color: #006a71;
+        padding: 10px 0 10px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.carousel{
+    border: solid 5px #c3ce32 ;
+    border-radius: 3%;
+    max-width: 600px;
+    margin: 10px auto 20px;
+    background-color: #006a71;
+
+}
+
+.video-custom{
+    border: solid 5px #c3ce32 ;
+    border-radius: 5%;
+    max-width: 300px;
+    margin: 10px auto 10px;
+    display: block;
+}
+
+.home-video-title{
+    font-family: 'Montserrat', sans-serif;
+    color: #006a71;
+    padding: 0;
+    max-width: 50%;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+
+/* Projects Section */
+
+#projects{
+    background-color: #006a71;
+}
+
+.project-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #c3ce32;
+    padding: 20px 0;
+}
+
+.project-conatiner-custom{
+    max-width: 60%;
+}
+
+.row{
+    margin: 40px auto;
+}
+
+.project-image-custom{
+    width: 100px;
+    text-align: center;
+    margin:25px 0;
+}
+
+.project-subtitle{
+    color: #c3ce32;
+    text-align: left;
+}
+
+.project-description{
+    color: white;
+    text-align: left;
+    line-height: 2;
+}
+.profarming-custom{
+    width:200px;
+}
+
+
+@media(max-width:574px){
+
+    .project-subtitle{
+        color: #c3ce32;
+        text-align: center;
+    }
+    
+    .project-description{
+        color: white;
+        text-align: center;
+        line-height: 2;
+    }
+    
+
+}
+
+.hr-project{
+    width: 12%;
+}
+
+
+/* Hobbies Section */
+
+#hobbies{
+    background-color: #ffffdd;
+}
+
+.hobby-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    color: #006a71;
+    padding: 20px 0;
+}
+
+.hobby-custom{
+    padding: 20px 0;
+}
+
+.hobby-container-custom{
+    max-width: 60%;
+}
+
+.radio-custom{
+    border: 1px solid #006a71;
+    border-radius:100%; 
+    background: #006a71;
+    display: inline;
+}
+
+.hobby-description{
+    display: none;
+    background-color: #c3ce32;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px auto;
+}
+
+.hobby-image{
+    width: 150px;
+    background-color: #c3ce32;
+}
+
+.cooking-image{
+    width:100px;
+}
+
+.hobby-subtitle{
+        color: #006a71;
+        font-weight: bold;
+}
+
+
+
+/* Education Section */
+
+#education{
+    background-color: #006a71;
+}
+
+.education-container-custom{
+    max-width: 95%;
+}
+
+.education-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #c3ce32;
+    padding: 20px 0;
+}
+
+.table-custom{
+    margin:auto;
+    margin-bottom: 70px;
+}
+
+#education th {
+    border: 4px solid black;
+    padding: 4px;
+    background-color: #c3ce32;
+}
+
+#education td {
+    border: 4px solid black;
+    padding: 4px;
+    color: white;
+}
+
+
+
+
+/* Register Section */
+
+#register{
+    background-color: #006a71;
+}
+
+.register-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #c3ce32;
+    padding: 30px 0 20px;
+}
+
+.google-form-custom{
+    background-color: #006a71;
+    padding: 10px 0;
+}
+
+/* Footer Section */
+#footer {
+    background-color: #c3ce32;
+}
+
+.tag-line{
+    
+    padding:30px 0 0px;
+    padding-bottom: 10px;
+    font-size: 1.4rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #006a71;
+    font-weight: bold;
+}
+
+.contact-icon-custom{
+    color: #006a71;
+    font-size: 2rem;
+    margin: 0px 20px;
+}
+
+.footer-custom{
+    padding: 5px 0 10px;
+    margin: 0;
+}
