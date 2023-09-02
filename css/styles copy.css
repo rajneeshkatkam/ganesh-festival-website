@@ -29,6 +29,7 @@ body{
 /* Home Section */
 #home{
     background-color: #ffffdd;
+    /* height: 600px; */
 }
 
 .navbar-custom{
@@ -41,16 +42,69 @@ body{
 }
 
 .home-container-custom{
-    padding: 20px 0px;
+    padding: 0px 0px;
     margin: 0 0;
-    display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+}
+
+.home-heading-custom{
+    margin:80px auto 0px auto ;
+    font-family: 'Yatra One', cursive;
+    font-size: 6.625rem;
+    color: #ffa500;
+    font-weight: 100;
+}
+
+.home-subtitle{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.0rem;
+    color: #006a71;
+    font-weight: bold;
+    padding:25px 0 0
+}
+
+.top-cloud {
+    position: absolute;
+    right: 4rem;
+    width: 20%;
+}
+
+.bottom-cloud {
+    position: absolute;
+    left: 4rem;
+    width: 20%;
+}
+
+.profile-img {
+    border-radius: 100%;
+    border: solid 2px #006a71;
+    margin-top: 50px;
+}
+
+.home-description{
+    font-family: 'Montserrat', sans-serif;
+    color: #006a71;
+    padding: 10px 0 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 45%;
+    margin: 0 auto;
+}
+
+@media(max-width:550px){
+    .home-description{
+        font-family: 'Montserrat', sans-serif;
+        color: #006a71;
+        padding: 10px 0 10px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 90%;
+        margin: 0 auto;
+    }
 }
 
 
+
 .carousel {
-    width: 95%;
     border: solid 5px #c3ce32;
     background-color: #006a71;
     display: flex;
@@ -60,26 +114,16 @@ body{
   
 .carousel-item {
     width: 100%;
-    max-height: 700px;
+    height: 600px;
     overflow: hidden;
 }
 
 .testimonial-image {
     width: 100%;
-    max-height: 700px;
+    max-height: 100%;
     display: block;
     margin: auto auto; /* Center horizontally */
 }
-
-/* Styles for small screens */
-@media screen and (max-width: 767px) {
-    .testimonial-image {
-        width: 100%;
-        max-height: 500px;
-        display: block;
-        margin: auto auto; /* Center horizontally */
-    }
-  }
 
 
 
