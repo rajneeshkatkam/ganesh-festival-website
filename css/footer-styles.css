@@ -1,0 +1,25 @@
+/* Footer Section */
+#footer {
+    background-color: #c3ce32;
+}
+
+.tag-line{
+    
+    padding:30px 0 0px;
+    padding-bottom: 10px;
+    font-size: 1.4rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #006a71;
+    font-weight: bold;
+}
+
+.contact-icon-custom{
+    color: #006a71;
+    font-size: 2rem;
+    margin: 0px 20px;
+}
+
+.footer-custom{
+    padding: 5px 0 10px;
+    margin: 0;
+}

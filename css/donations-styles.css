@@ -1,0 +1,35 @@
+/* Donations Section */
+
+#education{
+    background-color: #006a71;
+    padding-top: 60px;
+}
+
+.education-container-custom{
+    max-width: 95%;
+}
+
+.education-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    color: #c3ce32;
+    padding: 20px 0;
+}
+
+.table-custom{
+    margin:auto;
+    margin-bottom: 70px;
+}
+
+#education th {
+    border: 4px solid black;
+    padding: 4px;
+    background-color: #c3ce32;
+}
+
+#education td {
+    border: 4px solid black;
+    padding: 4px;
+    color: white;
+}
+
