@@ -82,6 +82,7 @@ h2{
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    background-position-y: top;
 }
 
 .home-container-inside{
@@ -91,6 +92,37 @@ h2{
 }
 
 
+.moving-text-banner {
+    width: 100%; /* Make the banner 100% wide */
+    height: 50px; /* Adjust the height as needed */
+    background-color: #333;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-text {
+    display: inline-block;
+    animation: moveText 15s linear infinite;
+    /* transform: translateX(300%); Initial position outside the viewport */
+    margin:10px auto 0px auto ;
+    font-family: 'Yatra One', cursive;
+    font-size: 2rem;
+    color: #ff8400;
+    font-weight: 100;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(150vb);
+    }
+    100% {
+        transform: translateX(-150vb);
+    }
+}
 
 
 
