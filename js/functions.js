@@ -25,3 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+
+// Function to advance the carousel to the next slide
+function nextSlide() {
+  $('#carouselExampleControls1').carousel('next');
+}
+
+// Automatically advance the carousel every 3 seconds (3000 milliseconds)
+setInterval(nextSlide, 3000);

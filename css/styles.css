@@ -93,6 +93,8 @@ h2{
 
 
 
+
+
 /* Gallery Section */
 .gallery-container{
     background-image: url(../images/ganpati-2-min.jpg);
@@ -107,6 +109,41 @@ h2{
     padding-top: 56px;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
+}
+
+.carousel {
+    width: 100%;
+    /* background-color: #006a71; */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+  
+.carousel-item {
+    max-width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+:root {
+    --max-height-above-vh: 200px;
+}
+
+.gallery-image {
+    max-width: 100%;
+    max-height: calc(100vh - var(--max-height-above-vh));
+    display: block;
+    margin: auto auto; /* Center horizontally */
+}
+
+/* Styles for small screens */
+@media screen and (max-width: 767px) {
+    .gallery-image {
+        width: 100%;
+        height: calc(100vh - var(--max-height-above-vh));
+        display: block;
+        margin: auto auto; /* Center horizontally */
+    }
 }
 
 
