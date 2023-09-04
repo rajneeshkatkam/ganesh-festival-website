@@ -87,7 +87,7 @@ h2{
 .home-container-inside{
     padding-top: 56px;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6); /* Use rgba to set background color with opacity */
+    background-color: rgba(0, 0, 0, 0.8); /* Use rgba to set background color with opacity */
 }
 
 
@@ -106,7 +106,7 @@ h2{
 .gallery-container-inside{
     padding-top: 56px;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6); /* Use rgba to set background color with opacity */
+    background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
 }
 
 
@@ -125,7 +125,7 @@ h2{
 .testimonials-container-inside{
     padding-top: 56px;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6); /* Use rgba to set background color with opacity */
+    background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
 
 }
 
@@ -145,7 +145,7 @@ h2{
 .contactus-container-inside{
     padding-top: 56px;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6); /* Use rgba to set background color with opacity */
+    background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
 
 }
 
@@ -165,7 +165,7 @@ h2{
 .donations-container-inside{
     padding-top: 56px;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6); /* Use rgba to set background color with opacity */
+    background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
 
 }
 
