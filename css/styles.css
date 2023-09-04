@@ -95,7 +95,7 @@ h2{
 .moving-text-banner {
     width: 100%; /* Make the banner 100% wide */
     height: 50px; /* Adjust the height as needed */
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.6); ;
     color: #fff;
     overflow: hidden;
     white-space: nowrap; /* Prevent text from wrapping to the next line */
