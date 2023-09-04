@@ -51,7 +51,7 @@ h2{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    
+    background-position: center;
 }
 
 .home-container-inside{
@@ -62,6 +62,7 @@ h2{
 
 
 
+
 /* Gallery Section */
 .gallery-container{
     background-image: url(../images/ganpati-2.avif);
@@ -69,6 +70,7 @@ h2{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
 }
 
 .gallery-container-inside{
@@ -87,6 +89,7 @@ h2{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
 }
 
 .testimonials-container-inside{
@@ -106,6 +109,7 @@ h2{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
 }
 
 .contactus-container-inside{
@@ -125,6 +129,7 @@ h2{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
 }
 
 .donations-container-inside{
