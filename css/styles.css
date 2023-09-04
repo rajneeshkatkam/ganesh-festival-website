@@ -1,20 +1,8 @@
-/* Grey dots page seperator */
-.hr-class-gray {
-    border: none;
-    border-top: dotted 12px gray;
-    width: 7%;
-    margin-bottom: 0;
-    padding: 15px 0;
+body{
+    text-align:center;
+    font-family: 'Merriweather', serif;
+    margin: 0;
 }
-/* White dots page seperator */
-.hr-class-white {
-    border: none;
-    border-top: dotted 12px white;
-    width: 7%;
-    margin-bottom: 0;
-    padding: 15px 0;
-}
-
 
 /* Scroll to sections smoothly */
 html {
@@ -22,24 +10,9 @@ html {
 }
 
 
-/* Body */
-body{
-    text-align:center;
-    font-family: 'Merriweather', serif;
-    margin: 0;
-}
-
-.container-fluid{
-    padding: 0;
-}
-
-/* Nav bar */
+/* Navbar Section */
 .navbar-custom{
-    background-color: #ffbf00;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    max-height: 60px;
+    background-color: #ffa500;
 }
 
 .navbar-light{
@@ -47,11 +20,89 @@ body{
     color: #006a71;
 }
 
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #c3ce32;
+    padding: 20px 0;
+}
+
+
+
+
+/* Home Section */
+#home{
+    height: 100vh;
+    background-color: #006a71;
+}
+
+
+
+
+/* Gallery Section */
+#gallery{
+    height: 100vh;
+    background-color: #ffffdd;
+}
+
+
+
+
+
+/* Testimonials Section */
+#testimonials{
+    height: 100vh;
+    background-color: #006a71;
+}
+
+
+
+
+
+/* Contact Us Section */
+#contactus{
+    height: 100vh;
+    background-color: #ffffdd;
+}
+
+
+
+
+
+/* Donations Section */
+#donations{
+    height: 100vh;
+    background-color: #006a71;
+}
 
 
 
 
 
 
+/* Footer Section */
+#footer {
+    background-color: #c3ce32;
+}
+
+.tag-line{
+    padding:30px 0 0px;
+    padding-bottom: 10px;
+    font-size: 1.4rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #006a71;
+    font-weight: bold;
+}
+
+.contact-icon-custom{
+    color: #006a71;
+    font-size: 2rem;
+    margin: 0px 20px;
+}
+
+.footer-custom{
+    padding: 5px 0 10px;
+    margin: 0;
+}
 
 
