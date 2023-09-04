@@ -13,7 +13,7 @@ html {
 
 h2{
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     color: #c3ce32;
     padding: 20px 0;
 }
@@ -38,32 +38,38 @@ h2{
     z-index: 100;
 }
 
-.nav-padding-1{
-    height: 56px;
-    background-color: #ffffdd;
-}
-
-.nav-padding-2{
-    height: 56px;
-    background-color: #006a71;
-}
 
 
 
 
 /* Home Section */
-#home{
+
+.home-container{
+    background-image: url(../images/ganpati-1.avif);
+    background-size: 100vb 100vh;
+}
+
+.home-container-inside{
+    padding-top: 56px;
+    opacity: 0.6;
     height: 100vh;
-    background-color: #006a71;
+    background-color: #000;
 }
 
 
 
 
 /* Gallery Section */
-#gallery{
+.gallery-container{
+    background-image: url(../images/ganpati-2.avif);
+    background-size: 100vb 100vh;
+}
+
+.gallery-container-inside{
+    padding-top: 56px;
+    opacity: 0.6;
     height: 100vh;
-    background-color: #ffffdd;
+    background-color: #000;
 }
 
 
@@ -71,9 +77,16 @@ h2{
 
 
 /* Testimonials Section */
-#testimonials{
+.testimonials-container{
+    background-image: url(../images/ganpati-3.avif);
+    background-size: 100vb 100vh;
+}
+
+.testimonials-container-inside{
+    padding-top: 56px;
+    opacity: 0.6;
     height: 100vh;
-    background-color: #006a71;
+    background-color: #000;
 }
 
 
@@ -81,9 +94,16 @@ h2{
 
 
 /* Contact Us Section */
-#contactus{
+.contactus-container{
+    background-image: url(../images/ganpati-4.avif);
+    background-size: 100vb 100vh;
+}
+
+.contactus-container-inside{
+    padding-top: 56px;
+    opacity: 0.6;
     height: 100vh;
-    background-color: #ffffdd;
+    background-color: #000;
 }
 
 
@@ -91,11 +111,17 @@ h2{
 
 
 /* Donations Section */
-#donations{
-    height: 100vh;
-    background-color: #006a71;
+.donations-container{
+    background-image: url(../images/ganpati-5.avif);
+    background-size: 100vb 100vh;
 }
 
+.donations-container-inside{
+    padding-top: 56px;
+    opacity: 0.6;
+    height: 100vh;
+    background-color: #000;
+}
 
 
 
