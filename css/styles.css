@@ -76,7 +76,7 @@ h2{
 /* Home Section */
 
 .home-container{
-    background-image: url(../images/ganpati-1.avif);
+    background-image: url(../images/adarsh-ganpati-1-min.jpg);
     /* background-size: 100vb 100vh; */
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -95,7 +95,7 @@ h2{
 
 /* Gallery Section */
 .gallery-container{
-    background-image: url(../images/ganpati-2.avif);
+    background-image: url(../images/ganpati-2-min.jpg);
     /* background-size: 100vb 100vh; */
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -115,7 +115,7 @@ h2{
 
 /* Testimonials Section */
 .testimonials-container{
-    background-image: url(../images/ganpati-3.avif);
+    background-image: url(../images/ganpati-3-min.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -135,7 +135,7 @@ h2{
 
 /* Contact Us Section */
 .contactus-container{
-    background-image: url(../images/ganpati-4.avif);
+    background-image: url(../images/ganpati-4-min.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -155,7 +155,7 @@ h2{
 
 /* Donations Section */
 .donations-container{
-    background-image: url(../images/ganpati-5.avif);
+    background-image: url(../images/ganpati-5-min.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
