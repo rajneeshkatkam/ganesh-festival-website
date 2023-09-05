@@ -85,6 +85,19 @@ h2{
     background-position-y: top;
 }
 
+/* Styles for small screens */
+@media screen and (max-width: 767px) {
+    .home-container{
+        background-image: url(../images/adarsh-ganpati-1-min.jpg);
+        /* background-size: 100vb 100vh; */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-position-y: top;
+    }
+}
+
 .home-container-inside{
     padding-top: 56px;
     height: 100vh;
