@@ -1,5 +1,5 @@
 
-/* Tag classes */
+/* General styling starts here */
 
 body{
     text-align:center;
@@ -50,8 +50,26 @@ h2{
 }
 
 
+/* Initial state of the text */
+.fade-in-text {
+    opacity: 0;
+    transform: translateY(40px); /* Optional: Add a subtle slide-in effect */
+    transition: opacity 2s ease, transform 1s ease;
+}
 
-/* Navbar Section */
+/* Animation when the element is in the viewport */
+.fade-in-text.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* General styling ends here */
+
+
+
+
+
+/* Navbar Section Start*/
 .navbar-custom{
     background-color: #ffa500;
 }
@@ -69,11 +87,11 @@ h2{
     z-index: 100;
 }
 
+/* Navbar Section End*/
 
 
 
-
-/* Home Section */
+/* Home Section Start*/
 
 .home-container{
     background-image: url(../images/adarsh-nagar-ganpati-1.jpg);
@@ -161,10 +179,10 @@ h2{
 }
 
 
+/* Home Section End*/
 
 
-
-/* Gallery Section */
+/* Gallery Section Start*/
 .gallery-container{
     background-image: url(../images/ganpati-2-min.jpg);
     /* background-size: 100vb 100vh; */
@@ -216,10 +234,10 @@ h2{
 }
 
 
+/* Gallery Section End*/
 
 
-
-/* Testimonials Section */
+/* Testimonials Section Start*/
 .testimonials-container{
     background-image: url(../images/ganpati-1-min.jpg);
     background-repeat: no-repeat;
@@ -235,11 +253,11 @@ h2{
 
 }
 
+/* Testimonials Section End*/
 
 
 
-
-/* Contact Us Section */
+/* Contact Us Section Start*/
 .contactus-container{
     background-image: url(../images/ganpati-4-min.jpg);
     background-repeat: no-repeat;
@@ -255,11 +273,11 @@ h2{
 
 }
 
+/* Contact Us Section End*/
 
 
 
-
-/* Donations Section */
+/* Donations Section Start*/
 .donations-container{
     background-image: url(../images/ganpati-5-min.jpg);
     background-repeat: no-repeat;
@@ -274,12 +292,12 @@ h2{
     background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
 
 }
+/* Donations Section End*/
 
 
 
 
-
-/* Footer Section */
+/* Footer Section Start*/
 #footer {
     background-color: #c3ce32;
 }
@@ -304,4 +322,4 @@ h2{
     margin: 0;
 }
 
-
+/* Footer Section End*/
