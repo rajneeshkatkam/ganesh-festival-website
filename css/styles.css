@@ -194,7 +194,7 @@ h2{
 
 .gallery-container-inside{
     padding-top: 56px;
-    height: 100vh;
+    height: 150vh;
     background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
 }
 
@@ -212,24 +212,49 @@ h2{
     overflow: hidden;
 }
 
-:root {
-    --max-height-above-vh: 200px;
-}
-
 .gallery-image {
-    max-width: 100%;
-    max-height: calc(100vh - var(--max-height-above-vh));
+    max-width: 400px;
+    max-height: 500px;
     display: block;
     margin: auto auto; /* Center horizontally */
+    width: auto;
+    height: auto;
+
+}
+
+
+.gallery-card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.gallery-image-card {
+    max-width: 200px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    margin: 40px;
+    margin-top: 10px;
 }
 
 /* Styles for small screens */
 @media screen and (max-width: 767px) {
-    .gallery-image {
-        width: 100%;
-        height: calc(100vh - var(--max-height-above-vh));
-        display: block;
-        margin: auto auto; /* Center horizontally */
+
+    .gallery-image-card {
+        max-width: 100px;
+        max-height: 200px;
+        width: auto;
+        height: auto;
+        margin: 20px;
+        margin-top: 10px;
+    }
+    
+    .gallery-container-inside{
+        padding-top: 56px;
+        height: 120vh;
+        background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
     }
 }
 
