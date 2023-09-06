@@ -93,6 +93,18 @@ h2{
 
 /* Home Section Start*/
 
+.home-image {
+    max-width: 90%;
+    max-height: 1000px;
+    display: block;
+    margin: auto auto; /* Center horizontally */
+    width: auto;
+    height: auto;
+    background-color: #ffa500;
+    border-width: 2px;
+    margin-top: 30px;
+}
+
 .home-container{
     background-image: url(../images/adarsh-nagar-ganpati-1.jpg);
     /* background-size: 100vb 100vh; */
@@ -177,6 +189,8 @@ h2{
         }
     }
 }
+
+
 
 
 /* Home Section End*/
