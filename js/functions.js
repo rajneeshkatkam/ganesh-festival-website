@@ -11,8 +11,36 @@ window.onload = function () {
 
 
 // Function to advance the carousel to the next slide
-function nextSlide() {
-  $('#carouselExampleControls1').carousel('next');
+function nextSlide(carouselId) {
+  $(carouselId).carousel('next');
+}
+
+
+// Define the time interval (in milliseconds) for automatic scrolling
+const interval = 3000;
+let lastTime = 0;
+
+function animateCarousel(timestamp) {
+  if (!lastTime) {
+    lastTime = timestamp;
+  }
+
+  // Calculate the time difference
+  const deltaTime = timestamp - lastTime;
+
+  // Check if the time difference is greater than or equal to the interval
+  if (deltaTime >= interval) {
+    // Update the last time
+    lastTime = timestamp;
+
+    // Advance the carousels to the next slide
+    nextSlide('#mandap-carousel');
+    nextSlide('#visarjan-carousel');
+    nextSlide('#events-carousel');
+  }
+
+  // Request the next animation frame
+  requestAnimationFrame(animateCarousel);
 }
 
 // Function to check if an element is in the viewport
@@ -38,11 +66,44 @@ function handleScroll() {
   });
 }
 
+function hideall_carousels(){
+    document.getElementById("mandap-carousel").style.display = "none";
+    document.getElementById("visarjan-carousel").style.display = "none";
+    document.getElementById("events-carousel").style.display = "none";
+}
+
+function mandap_gallery_carousel(){
+    console.log("Mandap Gallery");
+    // Hide the loading page
+    hideall_carousels();
+    document.getElementById("mandap-carousel").style.display = "block";
+}
+
+function visarjan_gallery_carousel(){
+  console.log("Visarjan Gallery");
+  // Hide the loading page
+  hideall_carousels();
+  document.getElementById("visarjan-carousel").style.display = "block";
+}
+
+
+function events_gallery_carousel(){
+  console.log("Events Gallery");
+  // Hide the loading page
+  hideall_carousels();
+  document.getElementById("events-carousel").style.display = "block";
+}
+
+
 
 $(document).ready(function () {
 
-  // Automatically advance the carousel every 3 seconds (3000 milliseconds)
-  setInterval(nextSlide, 3000);
+  // Initially, these two carousels would be hidden
+  document.getElementById("visarjan-carousel").style.display = "none";
+  document.getElementById("events-carousel").style.display = "none";
+
+  // Start the animation loop
+  requestAnimationFrame(animateCarousel);
 
   // Attach the scroll event listener
   window.addEventListener('scroll', handleScroll);

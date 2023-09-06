@@ -223,6 +223,32 @@ h2{
 }
 
 
+/* CSS for the dark filter effect */
+.gallery-card-container .gallery-image-card {
+    position: relative;
+    overflow: hidden;
+}
+  
+.gallery-card-container .gallery-image-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity here */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Add a smooth transition effect */
+}
+
+.gallery-card-container .gallery-image-card:hover::before {
+    opacity: 1; /* Make the overlay fully visible on hover */
+}
+  
+
+
+
+
 .gallery-card-container{
     display: flex;
     flex-direction: column;
