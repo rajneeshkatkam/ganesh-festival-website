@@ -34,9 +34,9 @@ function animateCarousel(timestamp) {
     lastTime = timestamp;
 
     // Advance the carousels to the next slide
-    nextSlide('#mandap-carousel');
+    nextSlide('#vighnaharta-carousel');
     nextSlide('#visarjan-carousel');
-    nextSlide('#events-carousel');
+    nextSlide('#social-activities-carousel');
   }
 
   // Request the next animation frame
@@ -67,16 +67,16 @@ function handleScroll() {
 }
 
 function hideall_carousels(){
-    document.getElementById("mandap-carousel").style.display = "none";
+    document.getElementById("vighnaharta-carousel").style.display = "none";
     document.getElementById("visarjan-carousel").style.display = "none";
-    document.getElementById("events-carousel").style.display = "none";
+    document.getElementById("social-activities-carousel").style.display = "none";
 }
 
 function mandap_gallery_carousel(){
     console.log("Mandap Gallery");
     // Hide the loading page
     hideall_carousels();
-    document.getElementById("mandap-carousel").style.display = "block";
+    document.getElementById("vighnaharta-carousel").style.display = "block";
 }
 
 function visarjan_gallery_carousel(){
@@ -91,7 +91,7 @@ function events_gallery_carousel(){
   console.log("Events Gallery");
   // Hide the loading page
   hideall_carousels();
-  document.getElementById("events-carousel").style.display = "block";
+  document.getElementById("social-activities-carousel").style.display = "block";
 }
 
 
@@ -100,7 +100,7 @@ $(document).ready(function () {
 
   // Initially, these two carousels would be hidden
   document.getElementById("visarjan-carousel").style.display = "none";
-  document.getElementById("events-carousel").style.display = "none";
+  document.getElementById("social-activities-carousel").style.display = "none";
 
   // Start the animation loop
   requestAnimationFrame(animateCarousel);

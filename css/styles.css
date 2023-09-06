@@ -219,7 +219,8 @@ h2{
     margin: auto auto; /* Center horizontally */
     width: auto;
     height: auto;
-
+    background-color: #ffa500;
+    border-width: 2px;
 }
 
 
@@ -258,11 +259,13 @@ h2{
 
 .gallery-image-card {
     max-width: 200px;
-    max-height: 300px;
+    max-height: 350px;
     width: auto;
     height: auto;
     margin: 40px;
     margin-top: 10px;
+    background-color: #ffa500;
+    font-weight: bold;
 }
 
 /* Styles for small screens */
@@ -275,6 +278,7 @@ h2{
         height: auto;
         margin: 20px;
         margin-top: 10px;
+        font-size: 10px;
     }
     
     .gallery-container-inside{
@@ -350,7 +354,7 @@ h2{
 
 /* Footer Section Start*/
 #footer {
-    background-color: #c3ce32;
+    background-color: #ffa500;
 }
 
 .tag-line{
