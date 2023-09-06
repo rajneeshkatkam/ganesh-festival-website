@@ -103,8 +103,13 @@ h2{
     background-color: #ffa500;
     border-width: 2px;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
+.home-text{
+    padding: 20px;
+    color: #ffa500;
+}
 .home-container{
     background-image: url(../images/adarsh-nagar-ganpati-1.jpg);
     /* background-size: 100vb 100vh; */
@@ -306,8 +311,8 @@ h2{
 /* Gallery Section End*/
 
 
-/* Testimonials Section Start*/
-.testimonials-container{
+/* Committee Section Start*/
+.committee-container{
     background-image: url(../images/ganpati-1-min.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -315,14 +320,14 @@ h2{
     background-position: center;
 }
 
-.testimonials-container-inside{
+.committee-container-inside{
     padding-top: 56px;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
 
 }
 
-/* Testimonials Section End*/
+/* Committee Section End*/
 
 
 
