@@ -107,8 +107,9 @@ h2{
 }
 
 .home-text{
-    padding: 20px;
+    padding: 30px;
     color: #ffa500;
+    font-size: 14px;
 }
 .home-container{
     background-image: url(../images/adarsh-nagar-ganpati-1.jpg);
@@ -328,7 +329,6 @@ h2{
 }
 
 /* Committee Section End*/
-
 
 
 /* Contact Us Section Start*/
