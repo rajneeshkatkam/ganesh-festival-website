@@ -14,7 +14,7 @@ html {
 h2{
     font-family: 'Montserrat', sans-serif;
     font-size: 2.4rem;
-    color: #c3ce32;
+    color: #ffa500;
     padding: 20px 0;
     
 }
@@ -95,7 +95,7 @@ h2{
 
 .home-image {
     max-width: 90%;
-    max-height: 1000px;
+    max-height: 500px;
     display: block;
     margin: auto auto; /* Center horizontally */
     width: auto;
@@ -125,12 +125,6 @@ h2{
 @media screen and (max-width: 767px) {
     .home-container{
         background-image: url(../images/adarsh-ganpati-1-min.jpg);
-        /* background-size: 100vb 100vh; */
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-        background-position-y: top;
     }
 }
 
@@ -176,14 +170,7 @@ h2{
 /* Styles for small screens */
 @media screen and (max-width: 767px) {
     .banner-text {
-        display: inline-block;
         animation: moveTextSmall 15s linear infinite;
-        /* transform: translateX(300%); Initial position outside the viewport */
-        margin:10px auto 0px auto ;
-        font-family: 'Yatra One', cursive;
-        font-size: 2rem;
-        color: #ff8400;
-        font-weight: 100;
     }
     
     @keyframes moveTextSmall {
@@ -294,17 +281,13 @@ h2{
     .gallery-image-card {
         max-width: 100px;
         max-height: 200px;
-        width: auto;
-        height: auto;
         margin: 20px;
         margin-top: 10px;
-        font-size: 10px;
+        font-size: 12px;
     }
     
     .gallery-container-inside{
-        padding-top: 56px;
         height: 120vh;
-        background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
     }
 }
 
@@ -366,6 +349,42 @@ h2{
     background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
 
 }
+
+.donation-image {
+    max-width: 90%;
+    max-height: 500px;
+    display: block;
+    margin: auto auto; /* Center horizontally */
+    width: auto;
+    height: auto;
+    background-color: #ffa500;
+    border-width: 2px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.donation-text {
+    max-width: 40%;
+    max-height: 1000px;
+    display: block;
+    margin: auto auto; /* Center horizontally */
+    font-size: 20px;
+    background-color: #ffa500;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* Styles for small screens */
+@media screen and (max-width: 767px) {
+    .donation-text {
+        max-width: 80%;
+        font-size: 16px;
+    }
+}
+
+
 /* Donations Section End*/
 
 
