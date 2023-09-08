@@ -113,7 +113,6 @@ h2{
 }
 .home-container{
     background-image: url(../images/adarsh-nagar-ganpati-1.jpg);
-    /* background-size: 100vb 100vh; */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -130,7 +129,7 @@ h2{
 
 .home-container-inside{
     padding-top: 56px;
-    height: 100vh;
+    height: 1000px;
     background-color: rgba(0, 0, 0, 0.8); /* Use rgba to set background color with opacity */
 }
 
@@ -169,6 +168,11 @@ h2{
 
 /* Styles for small screens */
 @media screen and (max-width: 767px) {
+
+    .home-container-inside{
+        height: 800px;
+    }
+
     .banner-text {
         animation: moveTextSmall 15s linear infinite;
     }
@@ -192,7 +196,6 @@ h2{
 /* Gallery Section Start*/
 .gallery-container{
     background-image: url(../images/ganpati-2-min.jpg);
-    /* background-size: 100vb 100vh; */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -201,7 +204,7 @@ h2{
 
 .gallery-container-inside{
     padding-top: 56px;
-    height: 150vh;
+    height: 1200px;
     background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
 }
 
@@ -215,7 +218,7 @@ h2{
   
 .carousel-item {
     max-width: 100%;
-    max-height: 100vh;
+    max-height: 600px;
     overflow: hidden;
 }
 
@@ -276,7 +279,7 @@ h2{
 }
 
 /* Styles for small screens */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 809px) {
 
     .gallery-image-card {
         max-width: 100px;
@@ -287,7 +290,7 @@ h2{
     }
     
     .gallery-container-inside{
-        height: 120vh;
+        height: 1000px;
     }
 }
 
@@ -306,7 +309,7 @@ h2{
 
 .committee-container-inside{
     padding-top: 56px;
-    height: 100vh;
+    height: 1000px;
     background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
 
 }
@@ -325,7 +328,7 @@ h2{
 
 .contactus-container-inside{
     padding-top: 56px;
-    height: 100vh;
+    height: 1000px;
     background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
 
 }
@@ -345,7 +348,7 @@ h2{
 
 .donations-container-inside{
     padding-top: 56px;
-    height: 100vh;
+    height: 1000px;
     background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
 
 }
@@ -377,10 +380,14 @@ h2{
 }
 
 /* Styles for small screens */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1030px) {
     .donation-text {
         max-width: 80%;
         font-size: 16px;
+    }
+
+    .donations-container-inside{
+        height: 800px;
     }
 }
 
