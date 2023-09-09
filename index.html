@@ -24,6 +24,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/120cdbf9e6.js" crossorigin="anonymous"></script>
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "beta"});</script>
 
 
     <!-- CSS Stylesheet -->
@@ -42,7 +44,7 @@
     <div id="loading-page">
         <!-- Loading animation -->
         <div class="loader"></div>
-        <h2>Loading</h2>
+        <h2>Ganpati Bappa Morya</h2>
         
     </div>
 
@@ -50,37 +52,41 @@
     <!-- Your website content goes here -->
     <div id="content">
         <!-- Nav Bar -->
+
+
         <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
-            <!-- <div class="home-heading-custom">गणपती बाप्पा मोरया</div> -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#gallery">Gallery</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#committee">Committee</a>
-                        </li> -->
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#contactus">Contact us</a>
-                        </li> -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#donations">Donations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#footer">Contact us</a>
-                        </li>
-                    </ul>
-                </div>
+            <!-- Add your logo here -->
+            <a class="navbar-brand" href="#"> <!-- Add a navbar-brand for the logo -->
+                <img src="images/adarsh-ganpati-1-min.jpg" alt="Adarsh Nagar logo" width="30"> <!-- Replace 'your-logo-image.png' with the actual path to your logo image -->
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('gallery')">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('donations')">Donations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('footer')">Contact us</a>
+                    </li>
+                    <!-- Add more menu items and section IDs as needed -->
+                </ul>
+            </div>
         </nav>
+        
+        
+        
 
         <section id="home">
-            <div class="home-container">
+            <div class="sticky-padding-home">
                 <div class="home-container-inside">
                     <!-- Moving Banner -->
                     <div class="moving-text-banner">
@@ -102,7 +108,7 @@
 
 
         <section id="gallery">
-            <div class="gallery-container">
+            <div class="sticky-padding">
                 <div class="gallery-container-inside">
                     
 
@@ -112,7 +118,7 @@
                     
 
                     <div class="gallery-card-container">
-                        <div class="row">
+                        <div class="row galler-card">
                           <div class="gallery-image-card card shadow" onclick="mandap_gallery_carousel()">
                             <img src="images/adarsh-ganpati-1-min.jpg" class="card-img-top" alt="Card Image">
                             <p class="card-text">Vighnaharta</p> <!-- Add the text below the image -->
@@ -221,7 +227,7 @@
 
 
         <section id="donations">
-            <div class="donations-container">
+            <div class="sticky-padding">
                 <div class="donations-container-inside">
                     <div class="fade-in-text">
                         <h2>Donations</h2>
@@ -231,14 +237,13 @@
                         <img src="images/adarsh-ganpati-1-min.jpg" class="card-img-top" alt="Card Image">
                        
                     </div> -->
-                    <div>
+                    <div class="donation-box">
                         <img class="donation-image card" src="images/qr-donation.png" alt="ganpati pic 5">
+                        <div>
+                            <p>Support Ganapati Mandal's mission to celebrate our rich cultural heritage and traditions. Your donation helps us organize vibrant festivals and community events that bring us together in devotion. Join us in preserving these cherished traditions—your contribution makes a meaningful impact.</p>
+                            <a href="#" class="donation-text">UPI: adarshnagarganpati@okhdfcbank</a> <!-- Add the text below the image -->
+                        </div>  
                     </div>
-
-                    <div>
-                        <p class="donation-text card">UPI: adarshnagarganpati@okhdfcbank</p> <!-- Add the text below the image -->
-                    </div>
-                    
                 </div>
             </div>
         </section>
@@ -246,17 +251,22 @@
 
 
         <section id="footer">
-            <div>
-                <h2 class="tag-line">Contact Us</h2>
+            <div class="sticky-padding">
+                <div class="fade-in-text">
+                    <h2>Contact Us</h2>
+                </div>
+                <div class="footer-content">
+                    <p>Adarsh Nagar Sarvajanik Ganesh Utsav Mandal, OPEN AIR THEATRE, Adarsh Nagar Rd, MIG Colony, Adarsh Nagar, Prabhadevi, Mumbai, Maharashtra 400025</p>
+                    <div class="mapouter"><div class="gmap_canvas"><iframe src="https://maps.google.com/maps?q=worli%20sports%20club&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" style="width: 1080px; height: 400px;"></iframe><style>.mapouter{position:relative;height:400px;width:1080px}.gmap_canvas{overflow:hidden;height:400px;width:1080px}.gmap_canvas iframe{position:relative;z-index:2}.gmap_canvas a{position:absolute;top:0;z-index:0}</style></div></div>
+                </div>
+                <p class="footer-content">Make sure to follow us on</p>
+                <div class="social-icons">
                     <!-- <a href="https://www.linkedin.com/in/rajneesh-katkam-460204115/" class="contact-icon-custom"><i class="fab fa-linkedin"></i></a> -->
                     <a href="https://www.instagram.com/rajneesh_katkam/"  target="_blank" class="contact-icon-custom"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.facebook.com/rajneesh.katkam/"  target="_blank" class="contact-icon-custom"><i class="fab fa-facebook"></i></a>
                     <a href="mailto:rajneesh.katkam@gmail.com"  target="_blank" class="contact-icon-custom"><i class="fa fa-envelope"></i></a>
                     <!-- <a href="https://github.com/rajneeshkatkam" class="contact-icon-custom"><i class="fab fa-github"></i></a> -->
                     <!-- <hr class="hr-class-gray "> -->
-                <br><br>
-                <div>
-                    Icons made by <a href="https://fontawesome.com/" title="Font Awesome">Font Awesome</a>
                 </div>
                 <p class="footer-custom">© 2023 Adarsh Nagar Sarvajanik Ganeshotsav Mandal. All rights reserverd.</p>
             </div>

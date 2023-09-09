@@ -15,6 +15,18 @@ function nextSlide(carouselId) {
   $(carouselId).carousel('next');
 }
 
+function scrollToSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    if (section) {
+        var offset = section.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({
+            top: offset,
+            behavior: 'smooth' // You can use 'auto' instead of 'smooth' for instant scrolling
+        });
+    }
+}
+
+
 
 // Define the time interval (in milliseconds) for automatic scrolling
 const interval = 3000;

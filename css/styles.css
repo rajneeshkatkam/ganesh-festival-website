@@ -1,6 +1,13 @@
 
 /* General styling starts here */
-
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;;
+}
+p{
+    margin: 0;
+}
 body{
     text-align:center;
     font-family: 'Merriweather', serif;
@@ -53,7 +60,7 @@ h2{
 /* Initial state of the text */
 .fade-in-text {
     opacity: 0;
-    transform: translateY(40px); /* Optional: Add a subtle slide-in effect */
+    transform: translateY(30px); /* Optional: Add a subtle slide-in effect */
     transition: opacity 2s ease, transform 1s ease;
 }
 
@@ -61,6 +68,10 @@ h2{
 .fade-in-text.fade-in {
     opacity: 1;
     transform: translateY(0);
+}
+.fade-in-text .fade-in h2{
+    font-size: 50px;
+    font-weight: bold;
 }
 
 /* General styling ends here */
@@ -94,20 +105,16 @@ h2{
 /* Home Section Start*/
 
 .home-image {
-    max-width: 90%;
-    max-height: 500px;
+    max-width: 100%;
     display: block;
     margin: auto auto; /* Center horizontally */
-    width: auto;
+    width: 100%;
     height: auto;
-    background-color: #ffa500;
-    border-width: 2px;
-    margin-top: 30px;
     margin-bottom: 30px;
 }
 
 .home-text{
-    padding: 30px;
+    padding: 10px 30px;
     color: #ffa500;
     font-size: 14px;
 }
@@ -127,30 +134,23 @@ h2{
     }
 }
 
-.home-container-inside{
-    padding-top: 56px;
-    height: 1000px;
-    background-color: rgba(0, 0, 0, 0.8); /* Use rgba to set background color with opacity */
-}
-
-
 .moving-text-banner {
     width: 100%; /* Make the banner 100% wide */
     height: 50px; /* Adjust the height as needed */
-    background-color: rgba(0, 0, 0, 0.6); ;
+    background-color: #ffffff;
     color: #fff;
     overflow: hidden;
     white-space: nowrap; /* Prevent text from wrapping to the next line */
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 5px 0;
 }
 
 .banner-text {
     display: inline-block;
     animation: moveText 15s linear infinite;
     /* transform: translateX(300%); Initial position outside the viewport */
-    margin:10px auto 0px auto ;
     font-family: 'Yatra One', cursive;
     font-size: 2rem;
     color: #ff8400;
@@ -168,10 +168,6 @@ h2{
 
 /* Styles for small screens */
 @media screen and (max-width: 767px) {
-
-    .home-container-inside{
-        height: 800px;
-    }
 
     .banner-text {
         animation: moveTextSmall 15s linear infinite;
@@ -200,12 +196,6 @@ h2{
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-}
-
-.gallery-container-inside{
-    padding-top: 56px;
-    height: 1200px;
-    background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
 }
 
 .carousel {
@@ -256,42 +246,31 @@ h2{
     opacity: 1; /* Make the overlay fully visible on hover */
 }
   
-
-
-
-
 .gallery-card-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    
 }
 
 .gallery-image-card {
-    max-width: 200px;
-    max-height: 350px;
+    max-width: 300px;
     width: auto;
     height: auto;
-    margin: 40px;
     margin-top: 10px;
     background-color: #ffa500;
     font-weight: bold;
 }
-
+#vighnaharta-carousel{
+    margin: 40px 0 0 0;
+}
 /* Styles for small screens */
 @media screen and (max-width: 809px) {
 
     .gallery-image-card {
-        max-width: 100px;
-        max-height: 200px;
+        max-width: 200px;
         margin: 20px;
         margin-top: 10px;
         font-size: 12px;
     }
     
-    .gallery-container-inside{
-        height: 1000px;
-    }
 }
 
 
@@ -338,20 +317,7 @@ h2{
 
 
 /* Donations Section Start*/
-.donations-container{
-    background-image: url(../images/ganpati-5-min.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
 
-.donations-container-inside{
-    padding-top: 56px;
-    height: 1000px;
-    background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
-
-}
 
 .donation-image {
     max-width: 90%;
@@ -362,33 +328,26 @@ h2{
     height: auto;
     background-color: #ffa500;
     border-width: 2px;
-    margin-top: 30px;
-    margin-bottom: 20px;
+   
 }
 
 .donation-text {
-    max-width: 40%;
-    max-height: 1000px;
-    display: block;
-    margin: auto auto; /* Center horizontally */
-    font-size: 20px;
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 14px;
     background-color: #ffa500;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    padding: 10px;
+    padding: 10px 30px;
     font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #4d4d4d;
 }
 
 /* Styles for small screens */
 @media screen and (max-width: 1030px) {
-    .donation-text {
-        max-width: 80%;
-        font-size: 16px;
-    }
+    
 
-    .donations-container-inside{
-        height: 800px;
-    }
+    
 }
 
 
@@ -399,7 +358,7 @@ h2{
 
 /* Footer Section Start*/
 #footer {
-    background-color: #ffa500;
+
 }
 
 .tag-line{
@@ -414,12 +373,135 @@ h2{
 .contact-icon-custom{
     color: #006a71;
     font-size: 3rem;
-    margin: 0px 20px;
+    margin: 0px 10px;
+    font-size: 40px;
 }
 
 .footer-custom{
-    padding: 5px 0 10px;
+    background-color: #ff8400;
+    padding: 10px;
     margin: 0;
+    font-size: 12px;
 }
 
 /* Footer Section End*/
+ 
+/* Rishi Css Start */
+
+.galler-card{
+    display: flex;
+    justify-content: space-around;
+}
+.donation-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}
+.donation-box p{
+    padding: 10px 20px;
+    color: #ffa500;
+    font-size: 14px;
+}
+.footer-content{
+    color: #ffa500;
+    font-size: 14px;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.footer-content p{
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+.social-icons{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 20px;
+    padding-bottom: 20px;
+}
+.social-icons a:first-child{
+    margin-left: 0;
+}
+.gallery-card-container .row{
+    margin: 0;
+}
+.mapouter iframe{
+    padding-bottom: 20px;
+}
+/* .sticky-padding{
+    padding-top: 56px;
+} */
+
+/* Remove border around the hamburger menu button */
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler:focus {
+    border: none;
+    outline: none;
+}
+
+
+
+
+.sticky-padding-home{
+    padding-top: 80px;
+}
+.donation-text:hover{
+    color: white;
+    text-decoration: none;
+}
+.social-icons a:hover{
+    color: #ff8400;
+}
+.main-nav{
+    display: flex; justify-content: space-between;
+}
+.main-nav img{
+    width: 200px;
+}
+@media screen and (max-width: 1200px) {
+    .mapouter, .gmap_canvas{
+        width: 100% !important;
+    }
+    .gmap_canvas iframe{
+        width: 100% !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .home-image{
+        margin-bottom: 10px;
+    }
+    .donation-box {
+        flex-direction: column;
+    }
+    .donation-box p{
+        padding: 20px 0;
+    }
+    .donation-text{
+        margin: 0;
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+    .donation-box{
+        padding: 10px 20px;
+    }
+    .navbar{
+        padding: 10px;
+    }
+    h2{
+        padding: 10px 0;
+        margin-bottom: 0;
+    }
+    .gallery-image{
+        width: 100%;
+    }
+    #vighnaharta-carousel{
+        margin-top: 20px;
+    }
+    .donations-container-inside{
+        padding-bottom: 0;
+    }
+}
+/* Rishi Css End */
