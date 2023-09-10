@@ -82,7 +82,11 @@ h2{
 
 /* Navbar Section Start*/
 .navbar-custom{
-    background-color: #ffa500;
+    background-color: white;
+    border-bottom: 5px solid #ffa500;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: #ffa500;
 }
 
 .navbar-light{
@@ -114,9 +118,10 @@ h2{
 }
 
 .home-text{
-    padding: 10px 30px;
+    padding: 10px 0;
     color: #ffa500;
     font-size: 14px;
+    padding-bottom: 20px;
 }
 .home-container{
     background-image: url(../images/adarsh-nagar-ganpati-1.jpg);
@@ -255,8 +260,9 @@ h2{
     width: auto;
     height: auto;
     margin-top: 10px;
-    background-color: #ffa500;
+    background-color: white;
     font-weight: bold;
+    border: 2px solid white;
 }
 #vighnaharta-carousel, #visarjan-carousel, #social-activities-carousel{
     margin: 40px 0 10px 0;
@@ -268,10 +274,10 @@ h2{
 @media screen and (max-width: 809px) {
 
     .gallery-image-card {
-        max-width: 200px;
-        margin: 20px;
+        max-width: 100%;
         margin-top: 10px;
         font-size: 12px;
+        margin: 20px 0;
     }
     
 }
@@ -323,10 +329,9 @@ h2{
 
 
 .donation-image {
-    max-width: 50%;
+    max-width: 400px;
     max-height: 500px;
     display: block;
-    margin: auto auto; /* Center horizontally */
     width: 400px;
     height: auto;
     background-color: #ffa500;
@@ -373,14 +378,14 @@ h2{
 }
 
 .contact-icon-custom{
-    color: #006a71;
+    color: white;
     font-size: 3rem;
     margin: 0px 10px;
     font-size: 40px;
 }
 
 .footer-custom{
-    background-color: #ff8400;
+    background-color: white;
     padding: 10px;
     margin: 0;
     font-size: 12px;
@@ -390,25 +395,77 @@ h2{
  
 /* Rishi Css Start */
 
+
+
+/* Dropdown Button */
+.dropbtn {
+    color: #ffa500;
+    background: none;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    font-weight: bold;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffa500;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+    top: 40px;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background: none;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+        background-color: white;
+        color: #ffa500;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+
+.dropdown button:focus{
+    outline: none;
+}
+  
 .galler-card{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .donation-box{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
+    padding: 20px 0;
 }
 .donation-box p{
-    padding: 10px 50px;
+    padding: 10px 0;
     color: #ffa500;
     font-size: 14px;
 }
 .footer-content{
-    color: #ffa500;
+    color: white;
     font-size: 14px;
-    padding: 10px 20px;
+    padding: 10px 0;
     text-align: center;
 }
 
@@ -429,9 +486,7 @@ h2{
 .gallery-card-container .row{
     margin: 0;
 }
-.mapouter iframe{
-    padding-bottom: 20px;
-}
+
 .mapouter{
     margin: 0 auto;
 }
@@ -459,7 +514,7 @@ h2{
     text-decoration: none;
 }
 .social-icons a:hover{
-    color: #ff8400;
+    color: black;
 }
 .main-nav{
     display: flex; justify-content: space-between;
@@ -467,6 +522,36 @@ h2{
 .main-nav img{
     width: 200px;
 }
+.main-box{
+    max-width: 80%;
+    margin: 0 auto;
+}
+#footer{
+    background-color: #ffa500;
+}
+#gallery{
+    background-color: #ffa500;
+    padding-bottom: 20px;
+}
+.gallery-container-inside h2{
+    color: white;
+}
+#donations{
+    padding-bottom: 20px;
+}
+#footer h2{
+    color: white;
+}
+.card-text{
+    color : #ffa500;
+}
+.navbar-light .navbar-toggler{
+    color: #ffa500;
+}
+.navbar{
+    justify-content: flex-start;
+}
+
 @media screen and (max-width: 1200px) {
     .mapouter, .gmap_canvas{
         width: 100% !important;
@@ -480,10 +565,12 @@ h2{
         margin-bottom: 10px;
     }
     .donation-box {
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .donation-box p{
         padding: 20px 0;
+        max-width: 100%;
     }
     .donation-text{
         margin: 0;
@@ -491,7 +578,7 @@ h2{
         padding: 10px 15px;
     }
     .donation-box{
-        padding: 10px 20px;
+        padding: 10px 0;
     }
     .navbar{
         padding: 10px;
@@ -510,5 +597,46 @@ h2{
     .donations-container-inside{
         padding-bottom: 0;
     }
+    .main-box{
+        max-width: 90%;
+    }
+    .galler-card{
+        justify-content: center;
+    }
+    .card-text{
+        font-size: 16px;
+        padding: 10px 0;
+    }
+    .donation-image{
+        max-width: 80%;
+    }
+    .donation-box div{
+        max-width: 100%;
+        width: 100%;
+    }
+    .dropdown-mobile{
+        display: block;
+    }
+    .dropdown-desktop{
+        display: none;
+    }
+    .navbar-toggler {
+        display: inline-flex;
+        justify-content: flex-end;
+    }
+    .dropdown-mobile {
+        flex-grow: 1;
+        display: inline-flex;
+        justify-content: flex-end;
+    }
 }
+@media screen and (min-width: 768px) {
+    .dropdown-mobile{
+        display: none;
+    }
+    .dropdown-desktop{
+        display: block;
+    }
+}
+
 /* Rishi Css End */
