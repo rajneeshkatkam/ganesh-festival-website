@@ -18,7 +18,7 @@ function nextSlide(carouselId) {
 function scrollToSection(sectionId) {
     var section = document.getElementById(sectionId);
     if (section) {
-        var offset = section.getBoundingClientRect().top + window.scrollY - 70;
+        var offset = section.getBoundingClientRect().top + window.scrollY - 60;
         window.scrollTo({
             top: offset,
             behavior: 'smooth' // You can use 'auto' instead of 'smooth' for instant scrolling
