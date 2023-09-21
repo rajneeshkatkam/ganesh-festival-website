@@ -120,11 +120,12 @@ h2{
 .home-text{
     padding: 10px 0;
     color: #4d4d4d;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 800;
     padding-bottom: 20px;
 }
 .home-container{
-    background-image: url(../images/adarsh-nagar-ganpati-1.jpg);
+    background-image: url(../images/om-background.avif);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -132,10 +133,14 @@ h2{
     background-position-y: top;
 }
 
+.text-inside{
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
 /* Styles for small screens */
 @media screen and (max-width: 767px) {
     .home-container{
-        background-image: url(../images/adarsh-ganpati-1-min.jpg);
+        background-image: url(../images/om-background.avif);
     }
 }
 
@@ -462,7 +467,8 @@ h2{
 .donation-box p{
     padding: 10px 0;
     color: #4d4d4d;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 800;
 }
 .footer-content{
     color: white;
@@ -514,7 +520,7 @@ h2{
 
 
 .sticky-padding-home{
-    padding-top: 80px;
+    padding-top: 60px;
 }
 .donation-text:hover{
     color: #4d4d4d;
@@ -543,9 +549,9 @@ h2{
 .gallery-container-inside h2{
     color: white;
 }
-#donations{
+/* #donations{
     padding-bottom: 20px;
-}
+} */
 #footer h2{
     color: white;
 }
