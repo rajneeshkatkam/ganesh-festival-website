@@ -419,7 +419,7 @@ h2{
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #ffa500;
+    background-color: #ff8400;
     min-width: 120px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;

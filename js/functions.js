@@ -9,6 +9,36 @@ window.onload = function () {
 };
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.getElementById("dropdown-button");
+  const dropdownContent = document.getElementById("dropdown-content");
+
+  // Add a click event listener to the document
+  document.addEventListener("click", function (event) {
+      if (event.target !== button && !dropdownContent.contains(event.target)) {
+          // Click was outside the button and dropdown content, hide the dropdown
+          dropdownContent.style.display = "none";
+      }
+  });
+
+  // Add a scroll event listener to the window
+  window.addEventListener("scroll", function () {
+      // Hide the dropdown when scrolling occurs
+      dropdownContent.style.display = "none";
+  });
+
+  // Add a click event listener to the button to toggle the dropdown
+  button.addEventListener("click", function () {
+      if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+      } else {
+          dropdownContent.style.display = "block";
+      }
+  });
+});
+
+
+
 
 // Function to advance the carousel to the next slide
 function nextSlide(carouselId) {
