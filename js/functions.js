@@ -171,6 +171,52 @@ $(document).ready(function () {
 });
 
 
+// document.addEventListener('DOMContentLoaded', function () {
+//   const cards = document.getElementsByClassName('galler-card'); // Select all elements with the 'card' class
+//   const targetElement = document.getElementById('vighnaharta-carousel'); // Replace with the actual ID of your target element
+
+//   // Add a click event listener to each card
+//   for (const card of cards) {
+//       card.addEventListener('click', function () {
+//           targetElement.scrollIntoView({ behavior: 'smooth' }); // Smooth scrolling to the target element
+//       });
+//   }
+// });
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   const cards = document.querySelectorAll('.gallery-image-card'); // Select all elements with the 'my-scroll-trigger' class
+//   const targetElement = document.querySelector('.ganpati-carousel'); // Select the target element with the 'scroll-target' class
+
+//   // Add a click event listener to each card
+//   for (const card of cards) {
+//       card.addEventListener('click', function () {
+//           targetElement.scrollIntoView({ behavior: 'smooth' }); // Smooth scrolling to the target element
+//       });
+//   }
+// });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const cards = document.querySelectorAll('.gallery-image-card'); // Select all elements with the 'my-scroll-trigger' class
+  const targetElements = document.querySelectorAll('.ganpati-carousel'); // Select all elements with the 'scroll-target' class
+
+  cards.forEach(function (card, index) {
+      card.addEventListener('click', function () {
+          // Scroll to the corresponding target element based on its index
+          if (targetElements[index]) {
+            const targetPosition = targetElements[index].offsetTop - 70; // Calculate 60 pixels above the target element
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+      });
+  });
+});
+
+
+
+
+
+
 
 
 
