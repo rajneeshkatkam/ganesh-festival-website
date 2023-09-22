@@ -125,12 +125,12 @@ h2{
     padding-bottom: 20px;
 }
 .home-container{
-    background-image: url(../images/om-background.avif);
-    background-repeat: no-repeat;
+    background-image: url(../images/logo.png);
+    background-repeat:no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: 80% auto;
     background-position: center;
-    background-position-y: top;
+    background-position-y: bottom;
 }
 
 .text-inside{
@@ -140,7 +140,7 @@ h2{
 /* Styles for small screens */
 @media screen and (max-width: 767px) {
     .home-container{
-        background-image: url(../images/om-background.avif);
+        background-image: url(../images/logo.png);
     }
 }
 
