@@ -256,12 +256,13 @@ h2{
     opacity: 1; /* Make the overlay fully visible on hover */
 }
   
-.gallery-card-container{
+/* .gallery-card-container{
     
-}
+} */
 
 .gallery-image-card {
-    max-width: 150px;
+    margin: 20px;
+    max-width: 180px;
     width: auto;
     height: auto;
     margin-top: 10px;
@@ -280,10 +281,10 @@ h2{
 @media screen and (max-width: 809px) {
 
     .gallery-image-card {
-        max-width: 100%;
+        max-width: 40%;
         margin-top: 10px;
         font-size: 12px;
-        margin: 20px 0;
+        margin: 15px;
     }
     
 }
@@ -456,7 +457,7 @@ h2{
   
 .galler-card{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 .donation-box{
     display: flex;
