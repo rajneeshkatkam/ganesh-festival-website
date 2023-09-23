@@ -77,8 +77,8 @@ function animateCarousel(timestamp) {
 
     // Advance the carousels to the next slide
     nextSlide('#vighnaharta-carousel');
-    nextSlide('#visarjan-carousel');
-    nextSlide('#social-activities-carousel');
+    // nextSlide('#visarjan-carousel');
+    // nextSlide('#social-activities-carousel');
   }
 
   // Request the next animation frame
@@ -110,8 +110,8 @@ function handleScroll() {
 
 function hideall_carousels(){
     document.getElementById("vighnaharta-carousel").style.display = "none";
-    document.getElementById("visarjan-carousel").style.display = "none";
-    document.getElementById("social-activities-carousel").style.display = "none";
+    // document.getElementById("visarjan-carousel").style.display = "none";
+    // document.getElementById("social-activities-carousel").style.display = "none";
 }
 
 function mandap_gallery_carousel(){
@@ -121,28 +121,28 @@ function mandap_gallery_carousel(){
     document.getElementById("vighnaharta-carousel").style.display = "block";
 }
 
-function visarjan_gallery_carousel(){
-  console.log("Visarjan Gallery");
-  // Hide the loading page
-  hideall_carousels();
-  document.getElementById("visarjan-carousel").style.display = "block";
-}
+// function visarjan_gallery_carousel(){
+//   console.log("Visarjan Gallery");
+//   // Hide the loading page
+//   hideall_carousels();
+//   document.getElementById("visarjan-carousel").style.display = "block";
+// }
 
 
-function events_gallery_carousel(){
-  console.log("Events Gallery");
-  // Hide the loading page
-  hideall_carousels();
-  document.getElementById("social-activities-carousel").style.display = "block";
-}
+// function events_gallery_carousel(){
+//   console.log("Events Gallery");
+//   // Hide the loading page
+//   hideall_carousels();
+//   document.getElementById("social-activities-carousel").style.display = "block";
+// }
 
 
 
 $(document).ready(function () {
 
-  // Initially, these two carousels would be hidden
-  document.getElementById("visarjan-carousel").style.display = "none";
-  document.getElementById("social-activities-carousel").style.display = "none";
+  // // Initially, these two carousels would be hidden
+  // document.getElementById("visarjan-carousel").style.display = "none";
+  // document.getElementById("social-activities-carousel").style.display = "none";
 
   // Start the animation loop
   requestAnimationFrame(animateCarousel);
@@ -168,7 +168,47 @@ $(document).ready(function () {
           }
       });
   });
+
+
+  
+  // An array of image URLs
+  var imageUrls = [
+    'images/adarsh-nagar-ganpati-1.jpg',
+    'images/ganpati-1-min.jpg',
+    // Add more image URLs here
+  ];
+
+  add_images_carousel(imageUrls)
 });
+
+
+function add_images_carousel(imageUrls){
+
+  // Get the carousel inner element
+  var carouselInner = document.getElementById('carousel-inner');
+
+  // Loop through the image URLs and create carousel items
+  for (var i = 0; i < imageUrls.length; i++) {
+    var imageUrl = imageUrls[i];
+    
+    var carouselItem = document.createElement('div');
+    carouselItem.className = 'carousel-item';
+
+    // For the first image, add the 'active' class to make it the initial active item
+    if (i === 0) {
+        carouselItem.classList.add('active');
+    }
+
+    var image = document.createElement('img');
+    image.className = 'gallery-image card';
+    image.src = imageUrl;
+    image.alt = 'ganpati pic ' + (i + 1);
+
+    carouselItem.appendChild(image);
+    carouselInner.appendChild(carouselItem);
+  }
+
+}
 
 
 // document.addEventListener('DOMContentLoaded', function () {
@@ -197,20 +237,23 @@ $(document).ready(function () {
 // });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  const cards = document.querySelectorAll('.gallery-image-card'); // Select all elements with the 'my-scroll-trigger' class
-  const targetElements = document.querySelectorAll('.ganpati-carousel'); // Select all elements with the 'scroll-target' class
+// document.addEventListener('DOMContentLoaded', function () {
+//   const cards = document.querySelectorAll('.gallery-image-card'); // Select all elements with the 'my-scroll-trigger' class
+//   const targetElements = document.querySelectorAll('.ganpati-carousel'); // Select all elements with the 'scroll-target' class
 
-  cards.forEach(function (card, index) {
-      card.addEventListener('click', function () {
-          // Scroll to the corresponding target element based on its index
-          if (targetElements[index]) {
-            const targetPosition = targetElements[index].offsetTop - 70; // Calculate 60 pixels above the target element
-            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-        }
-      });
-  });
-});
+//   cards.forEach(function (card, index) {
+//       card.addEventListener('click', function () {
+//           // Scroll to the corresponding target element based on its index
+//           if (targetElements[index]) {
+//             const targetPosition = targetElements[index].offsetTop - 70; // Calculate 60 pixels above the target element
+//             window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+//         }
+//       });
+//   });
+// });
+
+
+
 
 
 
