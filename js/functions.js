@@ -189,7 +189,7 @@ $(document).ready(function () {
       });
   });
 
-
+  //Add the images count in images/gallery-images/Aagman/ here.
   add_images_carousel('Aagman', 4)
 });
 

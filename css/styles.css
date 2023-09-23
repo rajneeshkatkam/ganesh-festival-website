@@ -125,7 +125,7 @@ h2{
     padding-bottom: 40px;
 }
 .home-container{
-    background-image: url(../images/logo.png);
+    background-image: url(../images/common/logo.png);
     background-repeat:no-repeat;
     background-attachment: fixed;
     background-size: 80% auto;
@@ -140,7 +140,7 @@ h2{
 /* Styles for small screens */
 @media screen and (max-width: 767px) {
     .home-container{
-        background-image: url(../images/logo.png);
+        background-image: url(../images/common/logo.png);
     }
 }
 
@@ -200,13 +200,7 @@ h2{
 
 
 /* Gallery Section Start*/
-.gallery-container{
-    background-image: url(../images/ganpati-2-min.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
+
 
 .carousel {
     width: 100%;
@@ -257,6 +251,18 @@ h2{
 }
 
 
+.scrollable-card-container {
+    width: 100%; /* Set the width of the container */
+    overflow-x: auto; /* Add horizontal scrollbar if needed */
+    white-space: nowrap; /* Prevent cards from wrapping to the next line */
+}
+
+.gallery-card {
+    display: inline-block; /* Display cards in a horizontal line */
+    margin-right: 10px; /* Add some margin between cards */
+}
+
+
 .gallery-image-card {
     margin: 20px;
     max-width: 180px;
@@ -290,44 +296,6 @@ h2{
 /* Gallery Section End*/
 
 
-/* Committee Section Start*/
-.committee-container{
-    background-image: url(../images/ganpati-1-min.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
-
-.committee-container-inside{
-    padding-top: 56px;
-    height: 1000px;
-    background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
-
-}
-
-/* Committee Section End*/
-
-
-/* Contact Us Section Start*/
-.contactus-container{
-    background-image: url(../images/ganpati-4-min.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
-
-.contactus-container-inside{
-    padding-top: 56px;
-    height: 1000px;
-    background-color: rgba(0, 0, 0, 0.8);  /* Use rgba to set background color with opacity */
-
-}
-
-/* Contact Us Section End*/
-
-
 
 /* Donations Section Start*/
 
@@ -354,13 +322,6 @@ h2{
     color: #ffffff;
 }
 
-/* Styles for small screens */
-@media screen and (max-width: 1030px) {
-    
-
-    
-}
-
 
 /* Donations Section End*/
 
@@ -368,9 +329,6 @@ h2{
 
 
 /* Footer Section Start*/
-#footer {
-
-}
 
 .tag-line{
     padding:30px 0 0px;
