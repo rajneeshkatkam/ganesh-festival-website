@@ -255,10 +255,7 @@ h2{
 .gallery-card-container .gallery-image-card:hover::before {
     opacity: 1; /* Make the overlay fully visible on hover */
 }
-  
-/* .gallery-card-container{
-    
-} */
+
 
 .gallery-image-card {
     margin: 20px;

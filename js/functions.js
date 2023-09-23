@@ -127,7 +127,6 @@ function add_images_carousel(card_selected, total_images_count){
       imageUrls.push(imageUrl);
   }
   
-  
   // Get the carousel inner element
   var carouselInner = document.getElementById('carousel-inner');
 
@@ -135,7 +134,6 @@ function add_images_carousel(card_selected, total_images_count){
   while (carouselInner.firstChild) {
     carouselInner.removeChild(carouselInner.firstChild);
   }
-
 
   // Loop through the image URLs and create carousel items
   for (var i = 0; i < imageUrls.length; i++) {
@@ -156,7 +154,6 @@ function add_images_carousel(card_selected, total_images_count){
 
     carouselItem.appendChild(image);
     carouselInner.appendChild(carouselItem);
-
 
   }
 
