@@ -148,7 +148,7 @@ function add_images_carousel(card_selected, total_images_count){
     }
 
     var image = document.createElement('img');
-    image.className = 'gallery-image card';
+    image.className = 'gallery-image';
     image.src = imageUrl;
     image.alt = card_selected +' Pic ' + (i + 1);
 
@@ -157,6 +157,12 @@ function add_images_carousel(card_selected, total_images_count){
 
   }
 
+}
+
+function updateScrollButtons() {
+  const maxScrollLeft = cardContainer.scrollWidth - cardContainer.clientWidth;
+  scrollLeftButton.disabled = cardContainer.scrollLeft === 0;
+  scrollRightButton.disabled = cardContainer.scrollLeft >= maxScrollLeft;
 }
 
 
@@ -190,7 +196,33 @@ $(document).ready(function () {
   });
 
   //Add the images count in images/gallery-images/Aagman/ here.
-  add_images_carousel('Aagman', 4)
+  add_images_carousel('Aagman', 4);
+
+
+  const cardContainer = document.getElementById('cardContainer');
+  const scrollLeftButton = document.getElementById('scrollLeftButton');
+  const scrollRightButton = document.getElementById('scrollRightButton');
+
+  scrollRightButton.addEventListener('click', () => {
+      cardContainer.scrollBy({
+          left: 300, // Adjust the scroll distance
+          behavior: 'smooth', // Smooth scrolling
+      });
+  });
+
+  scrollLeftButton.addEventListener('click', () => {
+      cardContainer.scrollBy({
+          left: -300, // Adjust the scroll distance
+          behavior: 'smooth', // Smooth scrolling
+      });
+  });
+
+  cardContainer.addEventListener('scroll', () => {
+      updateScrollButtons();
+  });
+
+
+
 });
 
 

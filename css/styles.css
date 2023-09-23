@@ -251,17 +251,6 @@ h2{
 }
 
 
-.scrollable-card-container {
-    width: 100%; /* Set the width of the container */
-    overflow-x: auto; /* Add horizontal scrollbar if needed */
-    white-space: nowrap; /* Prevent cards from wrapping to the next line */
-}
-
-.gallery-card {
-    display: inline-block; /* Display cards in a horizontal line */
-    margin-right: 10px; /* Add some margin between cards */
-}
-
 
 .gallery-image-card {
     margin: 20px;
@@ -291,6 +280,40 @@ h2{
     }
     
 }
+
+    .carousel-button{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+        /* Styling for the card container */
+        .card-container {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            width: 100%;
+            padding: 16px;
+        }
+
+        /* Styling for individual cards */
+        .card {
+            flex: 0 0 auto;
+            margin-right: 16px; /* Spacing between cards */
+            border-radius: 8px;
+            padding: 1px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add some content and styles to the cards */
+        .card h2 {
+            margin-top: 0;
+        }
+
+        /* Hide horizontal scrollbar */
+        .card-container::-webkit-scrollbar {
+            display: none;
+        }
 
 
 /* Gallery Section End*/
