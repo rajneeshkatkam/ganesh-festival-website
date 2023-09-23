@@ -78,8 +78,6 @@ function animateCarousel(timestamp) {
 
     // Advance the carousels to the next slide
     nextSlide('#gallery-carousel');
-    // nextSlide('#visarjan-carousel');
-    // nextSlide('#social-activities-carousel');
   }
 
   // Request the next animation frame
@@ -109,44 +107,18 @@ function handleScroll() {
   });
 }
 
-// function hideall_carousels(){
-//     document.getElementById("gallery-carousel").style.display = "none";
-//     // document.getElementById("visarjan-carousel").style.display = "none";
-//     // document.getElementById("social-activities-carousel").style.display = "none";
-// }
-
-function gallery_carousel(card_selected){
-
-    console.log(card_selected);
-    document.getElementById("gallery-carousel").style.display = "block";
-
-    
-    
-}
-
-// Function to check if an image exists at a given URL
-function checkImageExists(imageUrl, callback) {
-  var img = new Image();
-  img.onload = function() {
-      // Image exists, execute the callback with true
-      callback(true);
-  };
-  img.onerror = function() {
-      // Image does not exist, execute the callback with false
-      callback(false);
-  };
-  img.src = imageUrl;
-}
 
 
-function add_images_carousel(card_selected){
+
+
+function add_images_carousel(card_selected, total_images_count){
 
   // Initialize an empty array to store image URLs
   var imageUrls = [];
 
   // Define the base path and the number of images
   var basePath = gallery_image_path+card_selected+'/'+card_selected+'-';
-  var numberOfImages = 100;
+  var numberOfImages = total_images_count;
 
   // Generate image URLs and add them to the array
   for (var i = 1; i <= numberOfImages; i++) {
@@ -154,48 +126,37 @@ function add_images_carousel(card_selected){
       var imageUrl = `${basePath}${i.toString().padStart(2, '0')}.jpg`;
       imageUrls.push(imageUrl);
   }
-
-  console.log(imageUrls)
-  console.log(imageUrls.length)
   
-
+  
   // Get the carousel inner element
   var carouselInner = document.getElementById('carousel-inner');
+
+  // Remove all child elements with the class 'carousel-item'
+  while (carouselInner.firstChild) {
+    carouselInner.removeChild(carouselInner.firstChild);
+  }
+
 
   // Loop through the image URLs and create carousel items
   for (var i = 0; i < imageUrls.length; i++) {
     var imageUrl = imageUrls[i];
-    // Use a variable to track whether the image exists
-    var imageExists = false;
 
-    checkImageExists(imageUrl, function(exists) {
-      if (exists) {
-          console.log('Image exists.');
-          imageExists = true;
+    var carouselItem = document.createElement('div');
+    carouselItem.className = 'carousel-item';
 
-          var carouselItem = document.createElement('div');
-          carouselItem.className = 'carousel-item';
-      
-          // For the first image, add the 'active' class to make it the initial active item
-          if (i === 0) {
-              carouselItem.classList.add('active');
-          }
-      
-          var image = document.createElement('img');
-          image.className = 'gallery-image card';
-          image.src = imageUrl;
-          image.alt = 'ganpati pic ' + (i + 1);
-      
-          carouselItem.appendChild(image);
-          carouselInner.appendChild(carouselItem);
-      }
-    });
+    // For the first image, add the 'active' class to make it the initial active item
+    if (i === 0) {
+        carouselItem.classList.add('active');
+    }
 
-    // Check the value of imageExists and break out of the loop if necessary
-    if (!imageExists) {
-      console.log('Image does not exist.', imageUrl);
-      break;
-  }
+    var image = document.createElement('img');
+    image.className = 'gallery-image card';
+    image.src = imageUrl;
+    image.alt = card_selected +' Pic ' + (i + 1);
+
+    carouselItem.appendChild(image);
+    carouselInner.appendChild(carouselItem);
+
 
   }
 
@@ -205,10 +166,6 @@ function add_images_carousel(card_selected){
 
 
 $(document).ready(function () {
-
-  // // Initially, these two carousels would be hidden
-  // document.getElementById("visarjan-carousel").style.display = "none";
-  // document.getElementById("social-activities-carousel").style.display = "none";
 
   // Start the animation loop
   requestAnimationFrame(animateCarousel);
@@ -236,60 +193,10 @@ $(document).ready(function () {
   });
 
 
-
-  // An array of image URLs
-  var imageUrls = [
-    'images/adarsh-nagar-ganpati-1.jpg',
-    'images/ganpati-1-min.jpg',
-    // Add more image URLs here 
-  ];
-
-  add_images_carousel('Aagman')
+  add_images_carousel('Aagman', 4)
 });
 
 
-
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   const cards = document.getElementsByClassName('galler-card'); // Select all elements with the 'card' class
-//   const targetElement = document.getElementById('gallery-carousel'); // Replace with the actual ID of your target element
-
-//   // Add a click event listener to each card
-//   for (const card of cards) {
-//       card.addEventListener('click', function () {
-//           targetElement.scrollIntoView({ behavior: 'smooth' }); // Smooth scrolling to the target element
-//       });
-//   }
-// });
-
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   const cards = document.querySelectorAll('.gallery-image-card'); // Select all elements with the 'my-scroll-trigger' class
-//   const targetElement = document.querySelector('.ganpati-carousel'); // Select the target element with the 'scroll-target' class
-
-//   // Add a click event listener to each card
-//   for (const card of cards) {
-//       card.addEventListener('click', function () {
-//           targetElement.scrollIntoView({ behavior: 'smooth' }); // Smooth scrolling to the target element
-//       });
-//   }
-// });
-
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   const cards = document.querySelectorAll('.gallery-image-card'); // Select all elements with the 'my-scroll-trigger' class
-//   const targetElements = document.querySelectorAll('.ganpati-carousel'); // Select all elements with the 'scroll-target' class
-
-//   cards.forEach(function (card, index) {
-//       card.addEventListener('click', function () {
-//           // Scroll to the corresponding target element based on its index
-//           if (targetElements[index]) {
-//             const targetPosition = targetElements[index].offsetTop - 70; // Calculate 60 pixels above the target element
-//             window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-//         }
-//       });
-//   });
-// });
 
 
 
