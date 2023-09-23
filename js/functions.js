@@ -61,6 +61,7 @@ function scrollToSection(sectionId) {
 // Define the time interval (in milliseconds) for automatic scrolling
 const interval = 3000;
 let lastTime = 0;
+const gallery_image_path='images/gallery-images/2023/';
 
 function animateCarousel(timestamp) {
   if (!lastTime) {
@@ -76,7 +77,7 @@ function animateCarousel(timestamp) {
     lastTime = timestamp;
 
     // Advance the carousels to the next slide
-    nextSlide('#vighnaharta-carousel');
+    nextSlide('#gallery-carousel');
     // nextSlide('#visarjan-carousel');
     // nextSlide('#social-activities-carousel');
   }
@@ -108,33 +109,98 @@ function handleScroll() {
   });
 }
 
-function hideall_carousels(){
-    document.getElementById("vighnaharta-carousel").style.display = "none";
-    // document.getElementById("visarjan-carousel").style.display = "none";
-    // document.getElementById("social-activities-carousel").style.display = "none";
-}
-
-function mandap_gallery_carousel(){
-    console.log("Mandap Gallery");
-    // Hide the loading page
-    hideall_carousels();
-    document.getElementById("vighnaharta-carousel").style.display = "block";
-}
-
-// function visarjan_gallery_carousel(){
-//   console.log("Visarjan Gallery");
-//   // Hide the loading page
-//   hideall_carousels();
-//   document.getElementById("visarjan-carousel").style.display = "block";
+// function hideall_carousels(){
+//     document.getElementById("gallery-carousel").style.display = "none";
+//     // document.getElementById("visarjan-carousel").style.display = "none";
+//     // document.getElementById("social-activities-carousel").style.display = "none";
 // }
 
+function gallery_carousel(card_selected){
 
-// function events_gallery_carousel(){
-//   console.log("Events Gallery");
-//   // Hide the loading page
-//   hideall_carousels();
-//   document.getElementById("social-activities-carousel").style.display = "block";
-// }
+    console.log(card_selected);
+    document.getElementById("gallery-carousel").style.display = "block";
+
+    
+    
+}
+
+// Function to check if an image exists at a given URL
+function checkImageExists(imageUrl, callback) {
+  var img = new Image();
+  img.onload = function() {
+      // Image exists, execute the callback with true
+      callback(true);
+  };
+  img.onerror = function() {
+      // Image does not exist, execute the callback with false
+      callback(false);
+  };
+  img.src = imageUrl;
+}
+
+
+function add_images_carousel(card_selected){
+
+  // Initialize an empty array to store image URLs
+  var imageUrls = [];
+
+  // Define the base path and the number of images
+  var basePath = gallery_image_path+card_selected+'/'+card_selected+'-';
+  var numberOfImages = 100;
+
+  // Generate image URLs and add them to the array
+  for (var i = 1; i <= numberOfImages; i++) {
+      // Use padStart to ensure two-digit numbers (e.g., '01', '02', ..., '100')
+      var imageUrl = `${basePath}${i.toString().padStart(2, '0')}.jpg`;
+      imageUrls.push(imageUrl);
+  }
+
+  console.log(imageUrls)
+  console.log(imageUrls.length)
+  
+
+  // Get the carousel inner element
+  var carouselInner = document.getElementById('carousel-inner');
+
+  // Loop through the image URLs and create carousel items
+  for (var i = 0; i < imageUrls.length; i++) {
+    var imageUrl = imageUrls[i];
+    // Use a variable to track whether the image exists
+    var imageExists = false;
+
+    checkImageExists(imageUrl, function(exists) {
+      if (exists) {
+          console.log('Image exists.');
+          imageExists = true;
+
+          var carouselItem = document.createElement('div');
+          carouselItem.className = 'carousel-item';
+      
+          // For the first image, add the 'active' class to make it the initial active item
+          if (i === 0) {
+              carouselItem.classList.add('active');
+          }
+      
+          var image = document.createElement('img');
+          image.className = 'gallery-image card';
+          image.src = imageUrl;
+          image.alt = 'ganpati pic ' + (i + 1);
+      
+          carouselItem.appendChild(image);
+          carouselInner.appendChild(carouselItem);
+      }
+    });
+
+    // Check the value of imageExists and break out of the loop if necessary
+    if (!imageExists) {
+      console.log('Image does not exist.', imageUrl);
+      break;
+  }
+
+  }
+
+}
+
 
 
 
@@ -170,50 +236,23 @@ $(document).ready(function () {
   });
 
 
-  
+
   // An array of image URLs
   var imageUrls = [
     'images/adarsh-nagar-ganpati-1.jpg',
     'images/ganpati-1-min.jpg',
-    // Add more image URLs here
+    // Add more image URLs here 
   ];
 
-  add_images_carousel(imageUrls)
+  add_images_carousel('Aagman')
 });
 
 
-function add_images_carousel(imageUrls){
-
-  // Get the carousel inner element
-  var carouselInner = document.getElementById('carousel-inner');
-
-  // Loop through the image URLs and create carousel items
-  for (var i = 0; i < imageUrls.length; i++) {
-    var imageUrl = imageUrls[i];
-    
-    var carouselItem = document.createElement('div');
-    carouselItem.className = 'carousel-item';
-
-    // For the first image, add the 'active' class to make it the initial active item
-    if (i === 0) {
-        carouselItem.classList.add('active');
-    }
-
-    var image = document.createElement('img');
-    image.className = 'gallery-image card';
-    image.src = imageUrl;
-    image.alt = 'ganpati pic ' + (i + 1);
-
-    carouselItem.appendChild(image);
-    carouselInner.appendChild(carouselItem);
-  }
-
-}
 
 
 // document.addEventListener('DOMContentLoaded', function () {
 //   const cards = document.getElementsByClassName('galler-card'); // Select all elements with the 'card' class
-//   const targetElement = document.getElementById('vighnaharta-carousel'); // Replace with the actual ID of your target element
+//   const targetElement = document.getElementById('gallery-carousel'); // Replace with the actual ID of your target element
 
 //   // Add a click event listener to each card
 //   for (const card of cards) {
