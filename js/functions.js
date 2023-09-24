@@ -180,6 +180,7 @@ $(document).ready(function () {
   window.addEventListener('load', handleScroll);
 
 
+
   // Get the navbar collapse element
   const navbarCollapse = document.querySelector(".navbar-collapse");
   // Get all the nav links inside the navbar
@@ -220,6 +221,15 @@ $(document).ready(function () {
   cardContainer.addEventListener('scroll', () => {
       updateScrollButtons();
   });
+
+  // Check the number of cards in the container
+  const cards = cardContainer.querySelectorAll('.card');
+
+  if (window.innerWidth >= 768 && cards.length <= 4) {
+      cardContainer.style.justifyContent = 'center';
+  } else {
+      cardContainer.style.justifyContent = 'flex-start';
+  }
 
 
 
