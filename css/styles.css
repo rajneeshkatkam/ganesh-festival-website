@@ -130,7 +130,7 @@ h2{
     background-attachment: fixed;
     background-size: 80% auto;
     background-position: center;
-    background-position-y: bottom;
+    background-position-y:center;
 }
 
 .text-inside{
@@ -140,7 +140,7 @@ h2{
 /* Styles for small screens */
 @media screen and (max-width: 767px) {
     .home-container{
-        background-image: url(../images/common/logo.png);
+        background-position-y: calc(100vh - 40vh);
     }
 }
 
