@@ -344,6 +344,7 @@ h2{
         white-space: nowrap;
         width: 100%;
         padding: 0px;
+        justify-content: center;
     }
 
     .card-container .gallery-image-card:first-child{
