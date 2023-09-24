@@ -250,6 +250,10 @@ h2{
     opacity: 1; /* Make the overlay fully visible on hover */
 }
 
+.ganpati-carousel{
+    margin-top: 30px;
+}
+
 
 
 .gallery-image-card {
@@ -285,6 +289,8 @@ h2{
         align-items: center;
         justify-content: center;
         display: flex;
+        color: #fff;
+        font-size: 20px;
     }
 
     /* Styling for the card container */
@@ -294,15 +300,15 @@ h2{
         white-space: nowrap;
         width: 100%;
         padding: 0px;
-        padding-bottom: 30px;
     }
 
     .card-container .gallery-image-card:first-child{
-        margin-left: 5px;
+        margin-left: 10px;
+
     } 
 
     .card-container .gallery-image-card:last-child{
-        margin-right: 5px;
+        margin-right: 10px;
     } 
 
     /* Styling for individual cards */
