@@ -672,6 +672,7 @@ h2{
     }
     .donation-image{
         max-width: 80%;
+        margin: 0px;
     }
     .donation-box div{
         max-width: 100%;
