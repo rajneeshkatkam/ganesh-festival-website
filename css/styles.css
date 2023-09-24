@@ -120,7 +120,7 @@ h2{
 .home-text{
     padding: 10px 0;
     color: #4d4d4d;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 800;
     padding-bottom: 40px;
 }
@@ -133,6 +133,24 @@ h2{
     background-position-y:center;
 }
 
+.shlok-font{
+    /* transform: translateX(300%); Initial position outside the viewport */
+    font-family: 'Amita', cursive;
+    font-size: 2rem;
+    color: #800020;
+    font-weight: bold;
+}
+
+
+.marathi-text{
+    font-size: 25px;
+    font-weight: 200;
+}
+
+.home-text p{
+    padding: 20px 0px;
+}
+
 .text-inside{
     background-color: rgba(255, 255, 255, 0.9);
 }
@@ -142,6 +160,25 @@ h2{
     .home-container{
         background-position-y: calc(100vh - 40vh);
     }
+
+    .marathi-text{
+        font-size: 16px;
+        font-weight: 200;
+    }
+    
+    .home-text p {
+        padding: 15px 0px;
+    }
+
+    .shlok-font{
+        /* transform: translateX(300%); Initial position outside the viewport */
+        font-family: 'Amita', cursive;
+        font-size: 18px;
+        padding-bottom: 40px !important;
+        color: #800020;
+        font-weight: bolder;
+    }
+
 }
 
 .moving-text-banner {
@@ -161,10 +198,10 @@ h2{
     display: inline-block;
     animation: moveText 15s linear infinite;
     /* transform: translateX(300%); Initial position outside the viewport */
-    font-family: 'Yatra One', cursive;
+    font-family: 'Khand', cursive;
     font-size: 2rem;
     color: #800020;
-    font-weight: 100;
+    font-weight: bold;
 }
 
 @keyframes moveText {
@@ -192,6 +229,7 @@ h2{
         }
     }
 }
+
 
 
 
