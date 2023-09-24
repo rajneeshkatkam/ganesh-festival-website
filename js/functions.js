@@ -179,8 +179,6 @@ $(document).ready(function () {
   // Trigger the animation for elements already in the viewport
   window.addEventListener('load', handleScroll);
 
-
-
   // Get the navbar collapse element
   const navbarCollapse = document.querySelector(".navbar-collapse");
   // Get all the nav links inside the navbar
