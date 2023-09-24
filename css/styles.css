@@ -397,13 +397,13 @@ h2{
 }
 
 .donation-text{
-    display: inline-block;
-    margin: 20px 0;
-    font-size: 14px;
+    display:block;
+    font-size: 20px;
+    margin: 20px 0px;
     background-color: #ffa500;
-    padding: 10px 30px;
+    padding: 20px 30px;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 10px;
     text-decoration: none;
     color: #ffffff;
 }
@@ -564,10 +564,7 @@ h2{
 .sticky-padding-home{
     padding-top: 60px;
 }
-.donation-text:hover{
-    color: #4d4d4d;
-    text-decoration: none;
-}
+
 .social-icons a:hover{
     color: #4d4d4d;
 }
@@ -638,7 +635,7 @@ h2{
     }
     .donation-text{
         margin: 0;
-        font-size: 12px;
+        font-size: 14px;
         padding: 10px 15px;
     }
     .donation-box{
