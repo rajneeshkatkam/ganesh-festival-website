@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
           // Click was outside the button and dropdown content, hide the dropdown
           dropdownContent.style.display = "none";
       }
-  });
+  }, { passive: true });
 
   // Add a scroll event listener to the window
   window.addEventListener("scroll", function () {
       // Hide the dropdown when scrolling occurs
       dropdownContent.style.display = "none";
-  });
+  }, { passive: true });
 
   // Add a click event listener to the button to toggle the dropdown
   button.addEventListener("click", function () {
@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
           dropdownContent.style.display = "block";
       }
-  });
-});
+  }, { passive: true });
+}, { passive: true });
 
 
 
@@ -181,10 +181,10 @@ $(document).ready(function () {
   requestAnimationFrame(animateCarousel);
 
   // Attach the scroll event listener
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('scroll', handleScroll, { passive: true });
 
   // Trigger the animation for elements already in the viewport
-  window.addEventListener('load', handleScroll);
+  window.addEventListener('load', handleScroll, { passive: true });
 
   // Get the navbar collapse element
   const navbarCollapse = document.querySelector(".navbar-collapse");
@@ -198,7 +198,7 @@ $(document).ready(function () {
               // Close the navbar collapse
               navbarCollapse.classList.remove("show");
           }
-      });
+      }, { passive: true });
   });
 
   //Add the images count in images/gallery-images/Aagman/ here.
@@ -214,18 +214,18 @@ $(document).ready(function () {
           left: 300, // Adjust the scroll distance
           behavior: 'smooth', // Smooth scrolling
       });
-  });
+  }, { passive: true });
 
   scrollLeftButton.addEventListener('click', () => {
       cardContainer.scrollBy({
           left: -300, // Adjust the scroll distance
           behavior: 'smooth', // Smooth scrolling
       });
-  });
+  }, { passive: true });
 
   cardContainer.addEventListener('scroll', () => {
       updateScrollButtons();
-  });
+  }, { passive: true });
 
   // Check the number of cards in the container
   const cards = cardContainer.querySelectorAll('.card');
