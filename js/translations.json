@@ -28,7 +28,9 @@
         "events-card-text":"Other Events",
         "bhog-card-text":"५६  bhog",
         "pooja-card-text":"Satyanarayan Pooja",
-        "visarjan-card-text":"Visarjan"
+        "visarjan-card-text":"Visarjan",
+        "follow-text":"Make sure to follow us on",
+        "follow-text-class":"footer-content main-box"
 
     },
     "marathi": {
@@ -36,7 +38,7 @@
         "language-selected-class":"marathi-nav-text dropbtn",
         "gallery-section-text":"गॅलरी",
         "donations-section-text":"देणगी",
-        "contact-section-text":"संपर्क",
+        "contact-section-text":"संपर्क साधा",
         "banner-text": "!! आदर्श नगर सार्वजनिक गणेशोत्सव मंडळातर्फे सर्व गणेश भक्तांचे हार्दिक स्वागत !!",
         "home-text-1":"लोकमान्य बाळ गंगाधर टिळकांनी १८९३ साली सार्वजनिक गणेशोत्सवास सुरूवात केली, त्याच प्रकारे आपल्या आदर्शनगर सार्वजनिक गणेशोत्सव मंडळाची स्थापना १९५१ साली झाली.",
         "home-text-2":"आदर्शनगर सार्वजनिक गणेशोत्सव मंडळातर्फे प्रतिवर्षी प्रमाणे यंदाही हा उत्सव साजरा करण्यात येत आहे. यंदाचे हे या उत्सवाचे ७३ वे वर्ष, त्यानिमित्ताने प्रसिध्द होणाऱ्या संकेतस्थळावरून आपणाशी संवादातून विचारांची देवाण घेवाण करताना खूपच आनंद होत आहे. ६८ इमारती, साधारणपणे १५३५ कुटुंब असणाऱ्या आदर्शनगर या संपूर्ण कॉलनीचा एकत्रित साजरा होणारा हा सार्वजनिक उत्सव. गत ७३ वर्षात हा उत्सव एकोप्याने एकत्रितपणे कोणत्याही दुजाभावा शिवाय तसेच विशेष उल्लेखनीय म्हणजे अखंड अर्थात संपूर्ण वसाहतीचा एकत्र असा उत्सव आहे.",
@@ -49,7 +51,7 @@
         "home-nav-text":"होम",
         "gallery-nav-text":"गॅलरी",
         "donations-nav-text":"देणगी",
-        "contact-nav-text":"संपर्क",
+        "contact-nav-text":"संपर्क साधा",
         "home-nav-text-class":"marathi-nav-text nav-link",
         "gallery-nav-text-class":"marathi-nav-text nav-link",
         "donations-nav-text-class":"marathi-nav-text nav-link",
@@ -60,6 +62,8 @@
         "events-card-text":"इतर कार्यक्रम",
         "bhog-card-text":"५६  भोग",
         "pooja-card-text":"सत्यनारायण पूजा",
-        "visarjan-card-text":"विसर्जन"
+        "visarjan-card-text":"विसर्जन",
+        "follow-text":"आम्हाला नक्की फॉलो करा",
+        "follow-text-class":"marathi-address-text footer-content main-box"
     }
 }
