@@ -402,9 +402,10 @@ h2{
 
 
 .donation-image {
+    display: flex;
     max-width: 400px;
     max-height: 500px;
-    display: block;
+    align-items: center;
     width: 400px;
     height: auto;
     background-color: #ffa500;
@@ -412,8 +413,8 @@ h2{
 }
 
 .donation-text{
-    display:block;
-    font-size: 20px;
+    display:inline-block;
+    font-size: 16px;
     margin: 20px 0px;
     background-color: #ffa500;
     padding: 20px 30px;
@@ -588,7 +589,7 @@ h2{
 }
 
 .social-icons a:hover{
-    color: #4d4d4d;
+    color: #800020;
 }
 .main-nav{
     display: flex; justify-content: space-between;
@@ -640,15 +641,29 @@ h2{
     .gmap_canvas iframe{
         width: 100% !important;
     }
+
+    .donation-box {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .donation-text{
+        margin: 0;
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .donation-box div{
+        width: 100%;
+        padding-top: 30px;
+        padding-left: 0px;
+    }
 }
 @media screen and (max-width: 768px) {
     .home-image{
         margin-bottom: 10px;
     }
-    .donation-box {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+
     .donation-box p{
         padding: 20px 0;
         max-width: 100%;
@@ -658,7 +673,7 @@ h2{
     .donation-text{
         margin: 0;
         font-size: 14px;
-        padding: 10px 15px;
+        padding: 10px 20px;
     }
     .donation-box{
         padding: 10px 0 30px 0;
