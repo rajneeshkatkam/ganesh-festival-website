@@ -265,11 +265,6 @@ function updateContent() {
     if (translations && translations[key+'-class']) {
       console.log(translations[key+'-class']);
       element.classList=[];
-      // const classesFromJSON = translations[key+'-class'];
-      // // Split the classes into an array (assuming they are space-separated)
-      // const classList = classesFromJSON.split(' ');
-      // // Join the classes back together into a single string
-      // const combinedClasses = classList.join(' ');
       element.classList=translations[key+'-class'];
     }
 

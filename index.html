@@ -45,8 +45,7 @@
     <!-- Loading Page -->
     <div id="loading-page">
         <!-- Loading animation -->
-        <img src="images/common/logo.png" alt="Adarsh Nagar Logo" width="250px"> 
-        <div class="loader"></div>
+        <img src="images/common/logo.png" alt="Adarsh Nagar Logo" width="250px">
         <h2>Ganpati Bappa Morya</h2>
         
     </div>
@@ -76,16 +75,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('home')">Home</a>
+                        <a data-translate="home-nav-text" class="nav-link" href="javascript:void(0);" onclick="scrollToSection('home')">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('gallery')">Gallery</a>
+                        <a data-translate="gallery-nav-text" class="nav-link" href="javascript:void(0);" onclick="scrollToSection('gallery')">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('donations')">Donations</a>
+                        <a data-translate="donations-nav-text" class="nav-link" href="javascript:void(0);" onclick="scrollToSection('donations')">Donations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('footer')">Contact us</a>
+                        <a data-translate="contact-nav-text" class="nav-link" href="javascript:void(0);" onclick="scrollToSection('footer')">Contact us</a>
                     </li>
                     <!-- Add more menu items and section IDs as needed -->
                 </ul>
@@ -144,7 +143,7 @@
                     
 
                     <div class="fade-in-text">
-                        <h2>Gallery</h2>
+                        <h2 data-translate="gallery-section-text">Gallery</h2>
                     </div>
 
                     <div class="d-flex">
@@ -158,23 +157,24 @@
                         <div id="cardContainer" class="flex-item card-container col-10">
                             <div class="gallery-image-card card shadow" onclick="add_images_carousel('Aagman', 9)"> <!-- add_images_carousel(card_name, images_count) -->
                                 <img src="images/common/aagman-card.jpg" class="card-img-top" alt="Card Image">
-                                <p class="card-text">Aagman</p> <!-- Add the text below the image -->
+                                <p class="card-text" data-translate="aagman-card-text">Aagman</p> <!-- Add the text below the image -->
                             </div>
-                            <div class="gallery-image-card card shadow" onclick="add_images_carousel('Events', 8)">
-                                <img src="images/common/events.jpg" class=" card-img-top" alt="Card Image">
-                                <p class="card-text">Other Events</p> <!-- Add the text below the image -->
-                            </div>
-                            <div class="gallery-image-card card shadow" onclick="add_images_carousel('Bhoog', 2)">
-                                <img src="images/common/aagman-card.jpg" class=" card-img-top" alt="Card Image">
-                                <p class="card-text">५६  Bhoog</p> <!-- Add the text below the image -->
+                            
+                            <div class="gallery-image-card card shadow" onclick="add_images_carousel('Bhog', 10)">
+                                <img src="images/common/bhog-card.jpg" class=" card-img-top" alt="Card Image">
+                                <p class="card-text" data-translate="bhog-card-text">५६  Bhog</p> <!-- Add the text below the image -->
                             </div>
                             <div class="gallery-image-card card shadow" onclick="add_images_carousel('Pooja', 2)">
                                 <img src="images/common/aagman-card.jpg" class=" card-img-top" alt="Card Image">
-                                <p class="card-text">Satyanarayan Pooja</p> <!-- Add the text below the image -->
+                                <p class="card-text" data-translate="pooja-card-text">Satyanarayan Pooja</p> <!-- Add the text below the image -->
                             </div>
                             <div class="gallery-image-card card shadow" onclick="add_images_carousel('Visarjan', 2)">
                                 <img src="images/common/aagman-card.jpg" class=" card-img-top" alt="Card Image">
-                                <p class="card-text">Visarjan</p> <!-- Add the text below the image -->
+                                <p class="card-text" data-translate="visarjan-card-text">Visarjan</p> <!-- Add the text below the image -->
+                            </div>
+                            <div class="gallery-image-card card shadow" onclick="add_images_carousel('Events', 10)">
+                                <img src="images/common/events.jpg" class=" card-img-top" alt="Card Image">
+                                <p class="card-text" data-translate="events-card-text">Other Events</p> <!-- Add the text below the image -->
                             </div>
 
 
@@ -216,7 +216,7 @@
                 <div class="text-inside">
                     <div class="donations-container-inside main-box ">
                         <div class="fade-in-text">
-                            <h2>Donations</h2>
+                            <h2 data-translate="donations-section-text">Donations</h2>
                         </div>
 
                         <div class="donation-box">
@@ -236,13 +236,13 @@
         <section id="footer">
             <div class="sticky-padding">
                 <div class="fade-in-text">
-                    <h2>Contact Us</h2>
+                    <h2 data-translate="contact-section-text">Contact Us</h2>
                 </div>
                 <div class="footer-content main-box">
-                    <p>Adarsh Nagar Sarvajanik Ganeshotsav Mandal, Near Worli Sports Club, Adarsh Nagar, Worli, Mumbai 400030</p>
+                    <p data-translate="footer-address-text">Adarsh Nagar Sarvajanik Ganeshotsav Mandal, Near Worli Sports Club, Adarsh Nagar, Worli, Mumbai 400030</p>
                     <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=1080&amp;height=400&amp;hl=en&amp;q=Adarsh nagar sarvajanik ganeshotsav mandal&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://connectionsgame.org/">Connections NYT</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>
                 </div>
-                <p class="footer-content main-box">Make sure to follow us on</p>
+                <p class="footer-content main-box" data-translate="follow-text">Make sure to follow us on</p>
                 <div class="social-icons">
                     <!-- <a href="https://www.linkedin.com/in/rajneesh-katkam-460204115/" class="contact-icon-custom"><i class="fab fa-linkedin"></i></a> -->
                     <a href="https://www.instagram.com/adarshnagarcha_vakratunda/"  target="_blank" class="contact-icon-custom"><i class="fab fa-instagram"></i></a>
