@@ -125,7 +125,7 @@ function add_images_carousel(card_selected, total_images_count){
   // Generate image URLs and add them to the array
   for (var i = 1; i <= numberOfImages; i++) {
       // Use padStart to ensure two-digit numbers (e.g., '01', '02', ..., '100')
-      var imageUrl = `${basePath}${i.toString().padStart(2, '0')}.jpg`;
+      var imageUrl = `${basePath}${i.toString().padStart(2, '0')}.avif`;
       imageUrls.push(imageUrl);
   }
   
