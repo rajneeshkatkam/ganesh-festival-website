@@ -621,6 +621,17 @@ h2{
     color : #ffa500;
     padding: 10px 0;
 }
+
+.gallery-image-card:hover{
+    background-color: rgba(128, 0, 32, 0.9);
+    border-color: #800020;
+}
+
+.gallery-image-card:hover p{
+    color: #fff;  
+}
+
+
 .navbar-light .navbar-toggler{
     color: #ffa500;
 }
