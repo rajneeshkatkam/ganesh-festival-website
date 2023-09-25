@@ -153,6 +153,7 @@ function add_images_carousel(card_selected, total_images_count){
     image.className = 'gallery-image';
     image.src = imageUrl;
     image.alt = card_selected +' Pic ' + (i + 1);
+    image.setAttribute('type', 'image/avif');
 
     carouselItem.appendChild(image);
     carouselInner.appendChild(carouselItem);
