@@ -169,7 +169,7 @@ h2{
     }
 
     .marathi-text{
-        font-size: 18px;
+        font-size: 18px !important;
         font-weight: 200;
     }
     
@@ -178,8 +178,10 @@ h2{
     }
 
     .english-text{
-        font-size: 14px;
+        font-size: 16px;
+        font-weight: 500;
     }
+
     
 
     .shlok-font{
@@ -241,9 +243,7 @@ h2{
         }
     }
 
-    .english-text{
-        font-weight: 500;
-    }
+
 }
 
 
@@ -671,7 +671,7 @@ h2{
         padding: 20px 0;
         max-width: 100%;
         font-weight: 500;
-        font-size: 14px;
+        font-size: 16px;
     }
     .donation-text{
         margin: 0;
