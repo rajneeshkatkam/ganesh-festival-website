@@ -263,7 +263,6 @@ function updateContent() {
     const key = element.getAttribute('data-translate');
 
     if (translations && translations[key+'-class']) {
-      console.log(translations[key+'-class']);
       element.classList=[];
       element.classList=translations[key+'-class'];
     }
