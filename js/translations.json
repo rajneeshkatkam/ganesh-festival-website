@@ -26,7 +26,7 @@
         "footer-address-text-class":"no-class",
         "aagman-card-text":"Aagman",
         "events-card-text":"Other Events",
-        "bhoog-card-text":"५६  Bhoog",
+        "bhog-card-text":"५६  bhog",
         "pooja-card-text":"Satyanarayan Pooja",
         "visarjan-card-text":"Visarjan"
 
@@ -58,7 +58,7 @@
         "footer-address-text-class":"marathi-address-text",
         "aagman-card-text":"आगमन",
         "events-card-text":"इतर कार्यक्रम",
-        "bhoog-card-text":"५६  भोग",
+        "bhog-card-text":"५६  भोग",
         "pooja-card-text":"सत्यनारायण पूजा",
         "visarjan-card-text":"विसर्जन"
     }
