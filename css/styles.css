@@ -610,6 +610,9 @@ h2{
     color: white;
 }
 .card-text{
+    white-space: normal; /* Allow text to wrap to the next line */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Display an ellipsis (...) if the text is too long */
     color : #ffa500;
     padding: 10px 0;
 }
