@@ -62,6 +62,8 @@ function scrollToSection(sectionId) {
 const interval = 3000;
 let lastTime = 0;
 const gallery_image_path='images/gallery-images/2023/';
+let translations; // Store the loaded translations here
+let contentElements;
 
 function animateCarousel(timestamp) {
   if (!lastTime) {
@@ -170,6 +172,11 @@ function updateScrollButtons() {
 
 $(document).ready(function () {
 
+
+  // Initial load for languages
+  contentElements = document.querySelectorAll('[data-translate]');
+  loadTranslations('english'); // Default to English or your preferred default language
+
   // Start the animation loop
   requestAnimationFrame(animateCarousel);
 
@@ -229,9 +236,49 @@ $(document).ready(function () {
       cardContainer.style.justifyContent = 'flex-start';
   }
 
-
-
 });
+
+
+ 
+// Multi language support functions
+
+
+// Function to load translations
+function loadTranslations(language) {
+  // Load translations from the JSON file
+  fetch('js/translations.json')
+    .then((response) => response.json())
+    .then((data) => {
+      translations = data[language];
+      // console.log(translations)
+      updateContent();
+    })
+    .catch((error) => console.error('Error loading translations:', error));
+}
+
+// Function to update content with translations
+function updateContent() {
+  // console.log(contentElements)
+  contentElements.forEach((element) => {
+    const key = element.getAttribute('data-translate');
+
+    if (translations && translations[key+'-class']) {
+      console.log(translations[key+'-class']);
+      element.classList=[];
+      // const classesFromJSON = translations[key+'-class'];
+      // // Split the classes into an array (assuming they are space-separated)
+      // const classList = classesFromJSON.split(' ');
+      // // Join the classes back together into a single string
+      // const combinedClasses = classList.join(' ');
+      element.classList=translations[key+'-class'];
+    }
+
+    if (translations && translations[key]) {
+      element.textContent = translations[key];
+    }
+
+  });
+}
 
 
 
