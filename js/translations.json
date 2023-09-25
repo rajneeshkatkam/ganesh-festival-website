@@ -20,8 +20,9 @@
         "home-nav-text-class":"nav-link",
         "gallery-nav-text-class":"nav-link",
         "donations-nav-text-class":"nav-link",
-        "contact-nav-text-class":"nav-link"
-
+        "contact-nav-text-class":"nav-link",
+        "footer-address-text":"Adarsh Nagar Sarvajanik Ganeshotsav Mandal, Near Worli Sports Club, Adarsh Nagar, Worli, Mumbai 400030",
+        "footer-address-text-class":"no-class"    
     },
     "marathi": {
         "language-selected":"मराठी",
@@ -44,6 +45,8 @@
         "home-nav-text-class":"marathi-nav-text nav-link",
         "gallery-nav-text-class":"marathi-nav-text nav-link",
         "donations-nav-text-class":"marathi-nav-text nav-link",
-        "contact-nav-text-class":"marathi-nav-text nav-link"
+        "contact-nav-text-class":"marathi-nav-text nav-link",
+        "footer-address-text":"आदर्श नगर सार्वजनिक गणेशोत्सव मंडळ, वरळी स्पोर्ट्स क्लब जवळ, आदर्श नगर, वरळी, मुंबई ४०००३०",
+        "footer-address-text-class":"marathi-address-text"
     }
 }

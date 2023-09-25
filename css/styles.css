@@ -26,6 +26,10 @@ h2{
     
 }
 
+.no-class{
+    /* Empty Class */
+}
+
 #loading-page {
     position: fixed;
     top: 0;
@@ -449,6 +453,11 @@ h2{
     margin: 0;
     font-size: 12px;
     color: #4d4d4d;
+}
+
+.marathi-address-text{
+    font-family: Mukta, cursive !important; 
+    font-size: 20px !important; 
 }
 
 /* Footer Section End*/
