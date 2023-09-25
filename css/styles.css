@@ -135,7 +135,7 @@ h2{
 .home-text{
     padding: 10px 0;
     color: #4d4d4d;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
     padding-bottom: 40px;
 }
@@ -159,7 +159,7 @@ h2{
 
 .marathi-text{
     font-family: Mukta, cursive;
-    font-size: 25px;
+    font-size: 25px !important;
 }
 
 .home-text p{
@@ -529,7 +529,8 @@ h2{
 .donation-box p{
     padding: 10px 0;
     color: #4d4d4d;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 800;
 
 }
 .footer-content{
