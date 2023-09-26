@@ -8,14 +8,14 @@ let handleScrollelements;
 let carouselInner;
 
 
-//Loading Page Function
-window.onload = function () {
-  // Hide the loading page
-  document.getElementById("loading-page").style.display = "none";
+// //Loading Page Function
+// window.onload = function () {
+//   // Hide the loading page
+//   document.getElementById("loading-page").style.display = "none";
   
-  // Display the actual content
-  document.getElementById("content").style.display = "block";
-};
+//   // Display the actual content
+//   document.getElementById("content").style.display = "block";
+// };
 
 
 function scrollToSection(sectionId) {
@@ -132,12 +132,6 @@ function updateScrollButtons() {
   scrollRightButton.disabled = cardContainer.scrollLeft >= maxScrollLeft;
 }
 
-function add_images_carousel_background(card_selected, total_images_count){
-    // Call the function to load carousel images in the background
-    window.requestIdleCallback(() => {
-      add_images_carousel(card_selected, total_images_count);
-  });
-}
 
 function adjustcards(){
   // Check the number of cards in the container
