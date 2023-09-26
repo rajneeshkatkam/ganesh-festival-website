@@ -206,7 +206,7 @@ $(document).ready(function () {
 
   dropDownContentHide();
   loadTranslations('english'); // Default to English or your preferred default language
-
+  scrollSpeedControl();
 
   // Add a click event listener to each nav link
   navLinks.forEach(function (navLink) {
@@ -244,7 +244,35 @@ $(document).ready(function () {
 });
 
 
+function scrollSpeedControl(){
 
+          // Variables to track touch events
+          let startY = 0;
+          let endY = 0;
+  
+          // Define a minimum swipe distance to trigger the faster scroll
+          const minSwipeDistance = 50;
+  
+          // Listen for touchstart event to capture the starting position
+          document.addEventListener('touchstart', (e) => {
+              startY = e.touches[0].clientY;
+          });
+  
+          // Listen for touchend event to capture the ending position
+          document.addEventListener('touchend', (e) => {
+              endY = e.changedTouches[0].clientY;
+  
+              // Calculate the distance of the swipe
+              const swipeDistance = startY - endY;
+              console.log(swipeDistance)
+  
+              // Check if the swipe distance is greater than the minimum threshold
+              if (swipeDistance > minSwipeDistance) {
+                  // Increase the scrolling speed by adjusting the scrollBy function
+                  window.scrollBy(0, -swipeDistance * 2); // You can adjust the factor to control the speed
+              }
+          });
+}
 
 
 
