@@ -1,4 +1,13 @@
 
+// Define the time interval (in milliseconds) for automatic scrolling
+const interval = 3000;
+const gallery_image_path='images/gallery-images/2023/';
+let translations; // Store the loaded translations here
+let contentElements;
+let handleScrollelements;
+let carouselInner;
+
+
 // //Loading Page Function
 // window.onload = function () {
 //   // Hide the loading page
@@ -9,7 +18,19 @@
 // };
 
 
-document.addEventListener("DOMContentLoaded", function () {
+function scrollToSection(sectionId) {
+  var section = document.getElementById(sectionId);
+  if (section) {
+      var offset = section.getBoundingClientRect().top + window.scrollY - 55;
+      window.scrollTo({
+          top: offset,
+          behavior: 'smooth' // You can use 'auto' instead of 'smooth' for instant scrolling
+      });
+  }
+}
+
+
+function dropDownContentHide(){
   const button = document.getElementById("dropdown-button");
   const dropdownContent = document.getElementById("dropdown-content");
 
@@ -24,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add a scroll event listener to the window
   window.addEventListener("scroll", function () {
       // Hide the dropdown when scrolling occurs
+      handleScroll();
       dropdownContent.style.display = "none";
   }, { passive: true });
 
@@ -35,56 +57,19 @@ document.addEventListener("DOMContentLoaded", function () {
           dropdownContent.style.display = "block";
       }
   }, { passive: true });
-}, { passive: true });
-
-
-
-
-// Function to advance the carousel to the next slide
-function nextSlide(carouselId) {
-  $(carouselId).carousel('next');
-}
-
-function scrollToSection(sectionId) {
-    var section = document.getElementById(sectionId);
-    if (section) {
-        var offset = section.getBoundingClientRect().top + window.scrollY - 55;
-        window.scrollTo({
-            top: offset,
-            behavior: 'smooth' // You can use 'auto' instead of 'smooth' for instant scrolling
-        });
-    }
 }
 
 
+// Function to schedule the next slide movement after a delay
+function scheduleNextSlide() {
 
-// Define the time interval (in milliseconds) for automatic scrolling
-const interval = 3000;
-let lastTime = 0;
-const gallery_image_path='images/gallery-images/2023/';
-let translations; // Store the loaded translations here
-let contentElements;
-
-function animateCarousel(timestamp) {
-  if (!lastTime) {
-    lastTime = timestamp;
-  }
-
-  // Calculate the time difference
-  const deltaTime = timestamp - lastTime;
-
-  // Check if the time difference is greater than or equal to the interval
-  if (deltaTime >= interval) {
-    // Update the last time
-    lastTime = timestamp;
-
-    // Advance the carousels to the next slide
-    nextSlide('#gallery-carousel');
-  }
-
-  // Request the next animation frame
-  requestAnimationFrame(animateCarousel);
+  setTimeout(function () {
+    $('#gallery-carousel').carousel('next');
+    // Schedule the next slide movement after 3 seconds (3000 milliseconds)
+    scheduleNextSlide();
+  }, interval);
 }
+
 
 // Function to check if an element is in the viewport
 function isElementInViewport(el) {
@@ -99,8 +84,7 @@ function isElementInViewport(el) {
 
 // Function to handle the scroll event
 function handleScroll() {
-  const elements = document.querySelectorAll('.fade-in-text');
-  elements.forEach((element) => {
+  handleScrollelements.forEach((element) => {
       if (isElementInViewport(element)) {
           element.classList.add('fade-in');
       } else {
@@ -115,51 +99,31 @@ function handleScroll() {
 
 function add_images_carousel(card_selected, total_images_count){
 
-  // Initialize an empty array to store image URLs
-  var imageUrls = [];
-
   // Define the base path and the number of images
   var basePath = gallery_image_path+card_selected+'/'+card_selected+'-';
-  var numberOfImages = total_images_count;
-
+  carouselInner.innerHTML='';
   // Generate image URLs and add them to the array
-  for (var i = 1; i <= numberOfImages; i++) {
+  for (var i = 0; i < total_images_count; i++) {
       // Use padStart to ensure two-digit numbers (e.g., '01', '02', ..., '100')
-      var imageUrl = `${basePath}${i.toString().padStart(2, '0')}.avif`;
-      imageUrls.push(imageUrl);
-  }
+      var imageUrl = `${basePath}${(i+1).toString().padStart(2, '0')}.avif`;
+
+      var carouselItem = document.createElement('div');
+      carouselItem.className = 'carousel-item';
   
-  // Get the carousel inner element
-  var carouselInner = document.getElementById('carousel-inner');
+      // For the first image, add the 'active' class to make it the initial active item
+      if (i === 0) {
+          carouselItem.classList.add('active');
+      }
 
-  // Remove all child elements with the class 'carousel-item'
-  while (carouselInner.firstChild) {
-    carouselInner.removeChild(carouselInner.firstChild);
+      var image = document.createElement('img');
+      image.className = 'gallery-image';
+      image.src = imageUrl;
+      image.alt = card_selected +' Pic ' + (i + 1);
+      image.setAttribute('type', 'image/avif');
+  
+      carouselItem.appendChild(image);
+      carouselInner.appendChild(carouselItem);
   }
-
-  // Loop through the image URLs and create carousel items
-  for (var i = 0; i < imageUrls.length; i++) {
-    var imageUrl = imageUrls[i];
-
-    var carouselItem = document.createElement('div');
-    carouselItem.className = 'carousel-item';
-
-    // For the first image, add the 'active' class to make it the initial active item
-    if (i === 0) {
-        carouselItem.classList.add('active');
-    }
-
-    var image = document.createElement('img');
-    image.className = 'gallery-image';
-    image.src = imageUrl;
-    image.alt = card_selected +' Pic ' + (i + 1);
-    image.setAttribute('type', 'image/avif');
-
-    carouselItem.appendChild(image);
-    carouselInner.appendChild(carouselItem);
-
-  }
-
 }
 
 function updateScrollButtons() {
@@ -169,28 +133,81 @@ function updateScrollButtons() {
 }
 
 
+function adjustcards(){
+  // Check the number of cards in the container
+  const cards = cardContainer.querySelectorAll('.card');
+
+  if (window.innerWidth >= 768 && cards.length <= 4) {
+      cardContainer.style.justifyContent = 'center';
+  } else {
+      cardContainer.style.justifyContent = 'flex-start';
+  }
+}
+
+
+ 
+// Multi language support functions
+
+
+// Function to load translations
+function loadTranslations(language) {
+  // Load translations from the JSON file
+  fetch('js/translations.json')
+    .then((response) => response.json())
+    .then((data) => {
+      translations = data[language];
+      updateContent();
+    })
+    .catch((error) => console.error('Error loading translations:', error));
+}
+
+// Function to update content with translations
+function updateContent() {
+  contentElements.forEach((element) => {
+    const key = element.getAttribute('data-translate');
+
+    if (translations && translations[key+'-class']) {
+      element.classList=[];
+      element.classList=translations[key+'-class'];
+    }
+
+    if (translations && translations[key]) {
+      element.textContent = translations[key];
+    }
+
+  });
+}
+
+
 
 
 $(document).ready(function () {
-
-
+  
+  handleScrollelements = document.querySelectorAll('.fade-in-text');
+  carouselInner = document.getElementById('carousel-inner');
+  const cardContainer = document.getElementById('cardContainer');
+  const scrollLeftButton = document.getElementById('scrollLeftButton');
+  const scrollRightButton = document.getElementById('scrollRightButton');
   // Initial load for languages
   contentElements = document.querySelectorAll('[data-translate]');
-  loadTranslations('english'); // Default to English or your preferred default language
-
-  // Start the animation loop
-  requestAnimationFrame(animateCarousel);
-
-  // Attach the scroll event listener
-  window.addEventListener('scroll', handleScroll, { passive: true });
-
-  // Trigger the animation for elements already in the viewport
-  window.addEventListener('load', handleScroll, { passive: true });
-
   // Get the navbar collapse element
   const navbarCollapse = document.querySelector(".navbar-collapse");
   // Get all the nav links inside the navbar
   const navLinks = navbarCollapse.querySelectorAll(".nav-link");
+  // Check the number of cards in the container
+  const cards = cardContainer.querySelectorAll('.card');
+
+
+  // Call the function to load carousel images in the background
+  window.requestIdleCallback(() => {
+    //Add the images count in images/gallery-images/Aagman/ here.
+    add_images_carousel('Aagman', 9);
+  });
+
+  dropDownContentHide();
+  loadTranslations('english'); // Default to English or your preferred default language
+
+
   // Add a click event listener to each nav link
   navLinks.forEach(function (navLink) {
       navLink.addEventListener("click", function () {
@@ -202,13 +219,6 @@ $(document).ready(function () {
       }, { passive: true });
   });
 
-  //Add the images count in images/gallery-images/Aagman/ here.
-  add_images_carousel('Aagman', 9);
-
-
-  const cardContainer = document.getElementById('cardContainer');
-  const scrollLeftButton = document.getElementById('scrollLeftButton');
-  const scrollRightButton = document.getElementById('scrollRightButton');
 
   scrollRightButton.addEventListener('click', () => {
       cardContainer.scrollBy({
@@ -225,55 +235,15 @@ $(document).ready(function () {
   }, { passive: true });
 
   cardContainer.addEventListener('scroll', () => {
-      updateScrollButtons();
-  }, { passive: true });
+    updateScrollButtons();}
+  ,{ passive: true });
 
-  // Check the number of cards in the container
-  const cards = cardContainer.querySelectorAll('.card');
-
-  if (window.innerWidth >= 768 && cards.length <= 4) {
-      cardContainer.style.justifyContent = 'center';
-  } else {
-      cardContainer.style.justifyContent = 'flex-start';
-  }
+  adjustcards();
+  scheduleNextSlide();
 
 });
 
 
- 
-// Multi language support functions
-
-
-// Function to load translations
-function loadTranslations(language) {
-  // Load translations from the JSON file
-  fetch('js/translations.json')
-    .then((response) => response.json())
-    .then((data) => {
-      translations = data[language];
-      // console.log(translations)
-      updateContent();
-    })
-    .catch((error) => console.error('Error loading translations:', error));
-}
-
-// Function to update content with translations
-function updateContent() {
-  // console.log(contentElements)
-  contentElements.forEach((element) => {
-    const key = element.getAttribute('data-translate');
-
-    if (translations && translations[key+'-class']) {
-      element.classList=[];
-      element.classList=translations[key+'-class'];
-    }
-
-    if (translations && translations[key]) {
-      element.textContent = translations[key];
-    }
-
-  });
-}
 
 
 
