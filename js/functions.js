@@ -65,26 +65,38 @@ const gallery_image_path='images/gallery-images/2023/';
 let translations; // Store the loaded translations here
 let contentElements;
 
-function animateCarousel(timestamp) {
-  if (!lastTime) {
-    lastTime = timestamp;
-  }
+// function animateCarousel(timestamp) {
+//   // console.log("Animate");
+//   if (!lastTime) {
+//     lastTime = timestamp;
+//   }
 
-  // Calculate the time difference
-  const deltaTime = timestamp - lastTime;
+//   // Calculate the time difference
+//   const deltaTime = timestamp - lastTime;
 
-  // Check if the time difference is greater than or equal to the interval
-  if (deltaTime >= interval) {
-    // Update the last time
-    lastTime = timestamp;
+//   // Check if the time difference is greater than or equal to the interval
+//   if (deltaTime >= interval) {
+//     // Update the last time
+//     lastTime = timestamp;
 
-    // Advance the carousels to the next slide
+//     // Advance the carousels to the next slide
+    
+//   }
+
+//   // Request the next animation frame
+//   requestAnimationFrame(animateCarousel);
+// }
+
+
+// Function to schedule the next slide movement after a delay
+function scheduleNextSlide() {
+  setTimeout(function () {
     nextSlide('#gallery-carousel');
-  }
-
-  // Request the next animation frame
-  requestAnimationFrame(animateCarousel);
+    // Schedule the next slide movement after 3 seconds (3000 milliseconds)
+    scheduleNextSlide();
+  }, interval);
 }
+
 
 // Function to check if an element is in the viewport
 function isElementInViewport(el) {
@@ -178,6 +190,7 @@ function add_images_carousel_background(card_selected, total_images_count){
 }
 
 
+
 $(document).ready(function () {
 
 
@@ -214,8 +227,7 @@ $(document).ready(function () {
   });
 
 
-  // Start the animation loop
-  requestAnimationFrame(animateCarousel);
+  scheduleNextSlide();
 
 
   const cardContainer = document.getElementById('cardContainer');
