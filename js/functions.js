@@ -239,7 +239,7 @@ $(document).ready(function () {
   ,{ passive: true });
 
   adjustcards();
-  scheduleNextSlide();
+  // scheduleNextSlide();
 
 });
 
