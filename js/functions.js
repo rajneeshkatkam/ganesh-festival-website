@@ -45,8 +45,7 @@ function dropDownContentHide(){
   // Add a scroll event listener to the window
   window.addEventListener("scroll", function () {
       // Hide the dropdown when scrolling occurs
-      handleScroll();
-      dropdownContent.style.display = "none";
+      handleScroll(dropdownContent);
   }, { passive: true });
 
   // Add a click event listener to the button to toggle the dropdown
@@ -83,7 +82,7 @@ function isElementInViewport(el) {
 }
 
 // Function to handle the scroll event
-function handleScroll() {
+function handleScroll(dropdownContent) {
   handleScrollelements.forEach((element) => {
       if (isElementInViewport(element)) {
           element.classList.add('fade-in');
@@ -91,6 +90,7 @@ function handleScroll() {
           element.classList.remove('fade-in'); // Remove the class when out of viewport
       }
   });
+  dropdownContent.style.display = "none";
 }
 
 
