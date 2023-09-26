@@ -168,7 +168,14 @@ function updateScrollButtons() {
   scrollRightButton.disabled = cardContainer.scrollLeft >= maxScrollLeft;
 }
 
+function add_images_carousel_background(card_selected, total_images_count){
 
+    // Call the function to load carousel images in the background
+    window.requestIdleCallback(() => {
+      add_images_carousel(card_selected, total_images_count);
+  });
+
+}
 
 
 $(document).ready(function () {
@@ -178,8 +185,6 @@ $(document).ready(function () {
   contentElements = document.querySelectorAll('[data-translate]');
   loadTranslations('english'); // Default to English or your preferred default language
 
-  // Start the animation loop
-  requestAnimationFrame(animateCarousel);
 
   // Attach the scroll event listener
   window.addEventListener('scroll', handleScroll, { passive: true });
@@ -202,8 +207,15 @@ $(document).ready(function () {
       }, { passive: true });
   });
 
-  //Add the images count in images/gallery-images/Aagman/ here.
-  add_images_carousel('Aagman', 9);
+  // Call the function to load carousel images in the background
+  window.requestIdleCallback(() => {
+      //Add the images count in images/gallery-images/Aagman/ here.
+      add_images_carousel('Aagman', 9);
+  });
+
+
+  // Start the animation loop
+  requestAnimationFrame(animateCarousel);
 
 
   const cardContainer = document.getElementById('cardContainer');
