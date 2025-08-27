@@ -1,11 +1,43 @@
 
 // Define the time interval (in milliseconds) for automatic scrolling
 const interval = 3000;
-const gallery_image_path='images/gallery-images/2023/';
+let current_year = '2025'; // Default year
+let gallery_image_path = 'images/gallery-images/' + current_year + '/';
 let translations; // Store the loaded translations here
 let contentElements;
 let handleScrollelements;
 let carouselInner;
+
+// Card configuration mapping
+const cardConfig = {
+  'aagman-card.avif': {
+    folderName: 'Aagman',
+    translationKey: 'aagman-card-text'
+  },
+  'bhog-card.avif': {
+    folderName: 'Bhog',
+    translationKey: 'bhog-card-text'
+  },
+  'events-card.avif': {
+    folderName: 'Events',
+    translationKey: 'events-card-text'
+  },
+  'health-card.avif': {
+    folderName: 'Health',
+    translationKey: 'health-card-text'
+  },
+  'visarjan-card.avif': {
+    folderName: 'Visarjan',
+    translationKey: 'visarjan-card-text'
+  },
+  'pooja-card.avif': {
+    folderName: 'Pooja',
+    translationKey: 'pooja-card-text'
+  }
+};
+
+// Store card data for each year
+let yearCardData = {};
 
 
 // //Loading Page Function
@@ -97,6 +129,181 @@ function handleScroll(dropdownContent) {
 
 
 
+// Function to get count of images in a gallery folder
+async function getImageCount(folderName) {
+  try {
+    // This is a simplified approach - in a real application, you might need
+    // to implement a server-side endpoint to get folder contents
+    // For now, we'll use predefined counts based on the existing structure
+    const imageCounts = {
+      'Aagman': {
+        '2023': 9,
+        '2024': 9,
+        '2025': 9 // Considering the extra files found
+      },
+      'Bhog': {
+        '2023': 10,
+        '2024': 10,
+        '2025': 11 // Considering the extra file found
+      },
+      'Events': {
+        '2023': 10,
+        '2024': 10,
+        '2025': 10
+      },
+      'Health': {
+        '2023': 5,
+        '2024': 5,
+        '2025': 5
+      },
+      'Pooja': {
+        '2023': 2,
+        '2024': 2,
+        '2025': 2
+      },
+      'Visarjan': {
+        '2023': 2,
+        '2024': 2,
+        '2025': 2
+      }
+    };
+    
+    return imageCounts[folderName] ? imageCounts[folderName][current_year] || 0 : 0;
+  } catch (error) {
+    console.error('Error getting image count:', error);
+    return 0;
+  }
+}
+
+// Function to check if an image exists
+function imageExists(imagePath) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(true);
+    img.onerror = () => resolve(false);
+    img.src = imagePath;
+  });
+}
+
+// Function to load card data for a specific year
+async function loadCardDataForYear(year) {
+  if (yearCardData[year]) {
+    return yearCardData[year]; // Return cached data
+  }
+  
+  const cardData = [];
+  const cardImagePath = `images/gallery-images/${year}/card-images/`;
+  
+  // Check which card images exist for this year
+  for (const [imageName, config] of Object.entries(cardConfig)) {
+    const fullImagePath = cardImagePath + imageName;
+    const exists = await imageExists(fullImagePath);
+    
+    if (exists) {
+      const imageCount = await getImageCount(config.folderName);
+      if (imageCount > 0) {
+        cardData.push({
+          imageName: imageName,
+          imagePath: fullImagePath,
+          folderName: config.folderName,
+          translationKey: config.translationKey,
+          imageCount: imageCount
+        });
+      }
+    }
+  }
+  
+  yearCardData[year] = cardData;
+  return cardData;
+}
+
+// Function to create and display cards for current year
+async function displayCardsForYear(year) {
+  const cardContainer = document.getElementById('cardContainer');
+  
+  // Show loading state
+  cardContainer.innerHTML = '<div class="loading-cards" style="text-align: center; padding: 20px;">Loading cards...</div>';
+  
+  try {
+    const cardData = await loadCardDataForYear(year);
+    
+    // Clear loading state
+    cardContainer.innerHTML = '';
+    
+    if (cardData.length === 0) {
+      cardContainer.innerHTML = '<div class="no-cards" style="text-align: center; padding: 20px;">No cards available for this year</div>';
+      return;
+    }
+    
+    // Create cards based on available data
+    cardData.forEach(card => {
+      const cardElement = document.createElement('div');
+      cardElement.className = 'gallery-image-card card shadow';
+      cardElement.onclick = () => add_images_carousel(card.folderName, card.imageCount);
+      
+      cardElement.innerHTML = `
+        <img src="${card.imagePath}" class="card-img-top" alt="Card Image" type="image/avif">
+        <p class="card-text" data-translate="${card.translationKey}">${getTranslationText(card.translationKey)}</p>
+      `;
+      
+      cardContainer.appendChild(cardElement);
+    });
+    
+    // Update content with current translations
+    if (translations) {
+      updateContent();
+    }
+    
+    // Adjust card layout
+    adjustcards();
+    
+    // Load default carousel if cards are available
+    if (cardData.length > 0) {
+      add_images_carousel(cardData[0].folderName, cardData[0].imageCount);
+    }
+  } catch (error) {
+    console.error('Error loading cards for year', year, ':', error);
+    cardContainer.innerHTML = '<div class="error-cards" style="text-align: center; padding: 20px; color: red;">Error loading cards for this year</div>';
+  }
+}
+
+// Helper function to get translation text
+function getTranslationText(key) {
+  if (translations && translations[key]) {
+    return translations[key];
+  }
+  
+  // Default text mapping
+  const defaultText = {
+    'aagman-card-text': 'Aagman',
+    'bhog-card-text': '५६ Bhog',
+    'events-card-text': 'Other Events',
+    'health-card-text': 'Health Checkup',
+    'visarjan-card-text': 'Visarjan',
+    'pooja-card-text': 'Pooja'
+  };
+  
+  return defaultText[key] || '';
+}
+
+// Function to switch between years
+function switchYear(year) {
+  // Update current year and gallery path
+  current_year = year;
+  gallery_image_path = 'images/gallery-images/' + current_year + '/';
+  
+  // Update active tab styling
+  const tabs = document.querySelectorAll('.year-tab');
+  tabs.forEach(tab => tab.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  // Clear current carousel
+  carouselInner.innerHTML = '';
+  
+  // Display cards for the new year
+  displayCardsForYear(year);
+}
+
 function add_images_carousel(card_selected, total_images_count){
 
   // Define the base path and the number of images
@@ -163,7 +370,9 @@ function loadTranslations(language) {
 
 // Function to update content with translations
 function updateContent() {
-  contentElements.forEach((element) => {
+  // Update both static and dynamic content elements
+  const allContentElements = document.querySelectorAll('[data-translate]');
+  allContentElements.forEach((element) => {
     const key = element.getAttribute('data-translate');
 
     if (translations && translations[key+'-class']) {
@@ -198,10 +407,9 @@ $(document).ready(function () {
   const cards = cardContainer.querySelectorAll('.card');
 
 
-  // Call the function to load carousel images in the background
+  // Call the function to load cards and carousel images for the current year
   window.requestIdleCallback(() => {
-    //Add the images count in images/gallery-images/Aagman/ here.
-    add_images_carousel('Aagman', 9);
+    displayCardsForYear(current_year);
   });
 
   dropDownContentHide();

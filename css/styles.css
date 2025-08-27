@@ -732,3 +732,49 @@ h2{
 }
 
 /* Rishi Css End */
+
+/* Year Tabs Styling Start */
+.year-tabs {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 5px;
+}
+
+.year-tab {
+    background-color: #cc8400; /* Darker than gallery background (#ffa500) */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 80px;
+}
+
+.year-tab:hover {
+    background-color: #800020; /* Same as navbar color for consistency */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.year-tab.active {
+    background-color: #800020; /* Same as navbar color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
+}
+
+.year-tab:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 768px) {
+    .year-tab {
+        padding: 10px 20px;
+        font-size: 14px;
+        min-width: 70px;
+    }
+}
+/* Year Tabs Styling End */
